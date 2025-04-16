@@ -28,13 +28,13 @@ class ShoppingCart {
         }
         
         // Fechar carrinho
-        const cartClose = document.querySelector('.cart-close');
+        const cartClose = document.querySelector('.close-cart');
         if (cartClose) {
             cartClose.addEventListener('click', () => this.closeCart());
         }
         
         // Fechar carrinho ao clicar no overlay
-        const cartOverlay = document.querySelector('.cart-overlay');
+        const cartOverlay = document.querySelector('.overlay');
         if (cartOverlay) {
             cartOverlay.addEventListener('click', () => this.closeCart());
         }
@@ -52,20 +52,24 @@ class ShoppingCart {
         }
         
         // Fechar modal de orçamento
-        const quoteClose = document.querySelector('.quote-close');
+        const quoteClose = document.querySelector('.close-modal');
         if (quoteClose) {
             quoteClose.addEventListener('click', () => this.closeQuoteModal());
         }
         
         // Enviar orçamento
-        const btnSendQuote = document.querySelector('.btn-send-quote');
+        const btnSendQuote = document.querySelector('.btn-send-order');
         if (btnSendQuote) {
-            btnSendQuote.addEventListener('click', () => this.sendQuote());
+            btnSendQuote.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.sendQuote();
+            });
         }
         
         // Adicionar produtos ao carrinho
         document.querySelectorAll('.btn-add-to-cart').forEach(button => {
             button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevenir comportamento padrão do link
                 const productCard = e.target.closest('.product-card');
                 if (productCard) {
                     this.addProductFromCard(productCard);
@@ -143,8 +147,8 @@ class ShoppingCart {
 
     // Abrir carrinho
     openCart() {
-        const cartContainer = document.querySelector('.cart-container');
-        const cartOverlay = document.querySelector('.cart-overlay');
+        const cartContainer = document.querySelector('.cart-sidebar');
+        const cartOverlay = document.querySelector('.overlay');
         
         if (cartContainer && cartOverlay) {
             cartContainer.classList.add('active');
@@ -157,8 +161,8 @@ class ShoppingCart {
 
     // Fechar carrinho
     closeCart() {
-        const cartContainer = document.querySelector('.cart-container');
-        const cartOverlay = document.querySelector('.cart-overlay');
+        const cartContainer = document.querySelector('.cart-sidebar');
+        const cartOverlay = document.querySelector('.overlay');
         
         if (cartContainer && cartOverlay) {
             cartContainer.classList.remove('active');
@@ -168,7 +172,7 @@ class ShoppingCart {
 
     // Abrir modal de orçamento
     openQuoteModal() {
-        const quoteModal = document.querySelector('.quote-modal');
+        const quoteModal = document.querySelector('.checkout-modal');
         
         if (quoteModal) {
             // Renderizar resumo do orçamento
@@ -181,7 +185,7 @@ class ShoppingCart {
 
     // Fechar modal de orçamento
     closeQuoteModal() {
-        const quoteModal = document.querySelector('.quote-modal');
+        const quoteModal = document.querySelector('.checkout-modal');
         
         if (quoteModal) {
             quoteModal.classList.remove('active');
@@ -271,8 +275,8 @@ class ShoppingCart {
 
     // Renderizar resumo do orçamento
     renderQuoteSummary() {
-        const quoteSummaryItems = document.querySelector('.quote-items');
-        const quoteTotalValue = document.querySelector('.quote-total-value');
+        const quoteSummaryItems = document.querySelector('.order-items');
+        const quoteTotalValue = document.querySelector('.order-total .total-items');
         
         if (quoteSummaryItems && quoteTotalValue) {
             // Limpar conteúdo atual
@@ -297,10 +301,10 @@ class ShoppingCart {
 
     // Enviar orçamento via WhatsApp
     sendQuote() {
-        const nameInput = document.querySelector('#quote-name');
-        const phoneInput = document.querySelector('#quote-phone');
-        const emailInput = document.querySelector('#quote-email');
-        const messageInput = document.querySelector('#quote-message');
+        const nameInput = document.querySelector('#name');
+        const phoneInput = document.querySelector('#phone');
+        const emailInput = document.querySelector('#email');
+        const messageInput = document.querySelector('#message');
         
         // Validar campos obrigatórios
         if (!nameInput.value.trim()) {
