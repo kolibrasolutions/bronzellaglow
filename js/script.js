@@ -343,19 +343,20 @@ document.addEventListener("DOMContentLoaded", initApp);
             background-color: #f44336;
         }
 
-        /* Estilos para animação dos cards - Injetados para garantir */
+        /* REMOVIDA animação dos cards de produto */
         .product-card {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
         }
         .product-card.animated {
-            opacity: 1;
-            transform: translateY(0);
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
         }
         /* Garantir que o display do filtro prevaleça */
-        .product-card[style*="display: block"] {
-            display: block !important; 
+        .product-card[style*="display: flex"] {
+            display: flex !important; 
         }
         .product-card[style*="display: none"] {
             display: none !important;
