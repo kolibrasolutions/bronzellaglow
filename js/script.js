@@ -3,7 +3,6 @@ const header = document.querySelector(".header");
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 const filterButtons = document.querySelectorAll(".filter-btn");
-const productCards = document.querySelectorAll(".product-card");
 const testimonialSlides = document.querySelectorAll(".testimonial-slide");
 const testimonialDots = document.querySelectorAll(".dot");
 const testimonialPrev = document.querySelector(".testimonial-prev");
