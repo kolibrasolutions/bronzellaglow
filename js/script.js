@@ -56,8 +56,38 @@ function initMobileMenu() {
     });
 }
 
+// Função auxiliar para aplicar o filtro
+function applyFilter(filterValue) {
+    productCards.forEach(card => {
+        if (filterValue === 'todos' || card.getAttribute('data-category') === filterValue) {
+            card.style.display = 'block';
+            // Aplicar estilos de visibilidade imediatamente ou com um pequeno delay
+            // Removendo o setTimeout para garantir a exibição inicial
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        } else {
+            // Ocultar imediatamente ou com animação
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            // Usar display none após a animação ou imediatamente se não houver animação
+            // Ajuste: Ocultar imediatamente para garantir que só os filtrados apareçam
+            card.style.display = 'none'; 
+        }
+    });
+}
+
 // Filtro de produtos
 function initProductFilter() {
+    // Aplicar filtro 'todos' inicialmente
+    applyFilter('todos');
+    // Garantir que o botão 'Todos' esteja ativo visualmente
+    const todosButton = document.querySelector('.filter-btn[data-filter="todos"]');
+    if (todosButton) {
+        filterButtons.forEach(btn => btn.classList.remove('active')); // Limpa outros ativos
+        todosButton.classList.add('active');
+    }
+
+    // Adicionar listeners aos botões
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remover classe active de todos os botões
@@ -69,25 +99,12 @@ function initProductFilter() {
             // Obter categoria do filtro
             const filterValue = button.getAttribute('data-filter');
             
-            // Filtrar produtos
-            productCards.forEach(card => {
-                if (filterValue === 'todos' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 100);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
-                }
-            });
+            // Aplicar o filtro
+            applyFilter(filterValue);
         });
     });
 }
+
 
 // Slider de depoimentos
 function initTestimonialSlider() {
@@ -108,23 +125,30 @@ function initTestimonialSlider() {
         
         // Mostrar slide atual
         testimonialSlides[index].classList.add('active');
-        testimonialDots[index].classList.add('active');
+        // Verificar se o dot existe antes de adicionar a classe
+        if (testimonialDots[index]) {
+            testimonialDots[index].classList.add('active');
+        }
         
         // Atualizar índice atual
         currentSlide = index;
     }
     
     // Evento para botão próximo
-    testimonialNext.addEventListener('click', () => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    });
+    if (testimonialNext) {
+        testimonialNext.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        });
+    }
     
     // Evento para botão anterior
-    testimonialPrev.addEventListener('click', () => {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(currentSlide);
-    });
+    if (testimonialPrev) {
+        testimonialPrev.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        });
+    }
     
     // Evento para dots
     testimonialDots.forEach((dot, index) => {
@@ -134,10 +158,15 @@ function initTestimonialSlider() {
     });
     
     // Auto play do slider (a cada 5 segundos)
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }, 5000);
+    // Verificar se existem slides antes de iniciar o intervalo
+    if (totalSlides > 0) {
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }, 5000);
+        // Mostrar o primeiro slide inicialmente
+        showSlide(0);
+    }
 }
 
 // Scroll suave para links de âncora
@@ -150,7 +179,7 @@ function initSmoothScroll() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerHeight = header.offsetHeight;
+                const headerHeight = header ? header.offsetHeight : 0; // Verificar se header existe
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
                 
                 window.scrollTo({
@@ -227,33 +256,47 @@ function initAnimations() {
     function isElementInViewport(el) {
         const rect = el.getBoundingClientRect();
         return (
-            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+            rect.bottom >= 0 // Garante que o elemento não esteja completamente acima da viewport
         );
     }
     
     // Função para animar elementos visíveis
     function animateOnScroll() {
         animatedElements.forEach(element => {
-            if (isElementInViewport(element) && !element.classList.contains('animated')) {
+            // Verificar se o elemento está visível e não foi animado ainda
+            // E se o estilo display não é 'none' (relevante para produtos filtrados)
+            if (isElementInViewport(element) && !element.classList.contains('animated') && getComputedStyle(element).display !== 'none') {
                 element.classList.add('animated');
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+                // A opacidade e transform já são aplicadas pelo filtro, 
+                // mas podemos garantir aqui se necessário, ou apenas adicionar a classe.
+                // element.style.opacity = '1'; 
+                // element.style.transform = 'translateY(0)';
+            } else if (!isElementInViewport(element) && element.classList.contains('animated')) {
+                // Opcional: Remover a classe 'animated' quando sai da viewport para re-animar
+                // element.classList.remove('animated');
+                // element.style.opacity = '0';
+                // element.style.transform = 'translateY(30px)';
             }
         });
     }
     
-    // Inicializar elementos com opacidade 0
+    // Inicializar elementos com opacidade 0 e transform (se não forem produtos)
+    // Os produtos já são controlados pelo filtro
     animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        if (!element.classList.contains('product-card')) {
+             element.style.opacity = '0';
+             element.style.transform = 'translateY(30px)';
+             element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        }
     });
     
     // Adicionar evento de scroll
     window.addEventListener('scroll', animateOnScroll);
     
     // Verificar elementos visíveis no carregamento da página
-    window.addEventListener('load', animateOnScroll);
+    // Atrasar um pouco para garantir que o filtro inicial já aplicou display: block
+    window.addEventListener('load', () => setTimeout(animateOnScroll, 150)); 
 }
 
 // Inicializar todas as funcionalidades quando o DOM estiver carregado
