@@ -362,6 +362,11 @@ document.addEventListener("DOMContentLoaded", initApp);
         }
     `;
   document.head.appendChild(style);
+
+  // CORREÇÃO: Adicionar a classe 'animated' a todos os .product-card ao carregar a página
+  document.querySelectorAll('.product-card').forEach(card => {
+    card.classList.add('animated');
+  });
 })();
 
 // Slideshow Principal
