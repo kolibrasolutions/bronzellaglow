@@ -1736,3 +1736,12 @@ section {
     }
 }
 
+
+
+.products {
+    background-color: white;
+    padding: var(--spacing-xl) 0;
+    position: relative; /* Add position */
+    z-index: 20; /* Add z-index (adjust if needed) */
+}
+
