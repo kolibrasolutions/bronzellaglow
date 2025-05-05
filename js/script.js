@@ -65,7 +65,7 @@ function applyFilter(filterValue) {
     // Reset animation class before changing display
     card.classList.remove("animated"); 
     if (filterValue === "todos" || cardCategory === filterValue) {
-      card.style.display = "block";
+      card.style.display = "flex";
     } else {
       card.style.display = "none";
     }
