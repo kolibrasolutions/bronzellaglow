@@ -1,0 +1,835 @@
+{
+    "categories_pt": [
+        "oleo-corporal",
+        "po-descolorante",
+        "esfoliantes",
+        "cuidados-pele",
+        "hidratantes",
+        "corantes",
+        "ativadores",
+        "fitas",
+        "potencializadores",
+        "agua-oxigenada"
+    ],
+    "products": [
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto1.jpg",
+            "alt_pt": "Ametista UV I Ativador de Bronzeado - 900ML",
+            "name_pt": "Ametista UV I Ativador de Bronzeado - 900ML",
+            "description_pt": "AMETISTA UV I, é um ativador de bronzeado que deixa a pele uniformizada, dourada e\n                            hidratada entregando um bronzeado de forma mais rapida e saudável.",
+            "price": null,
+            "id": "produto1"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto2.jpg",
+            "alt_pt": "Ativador de Bronzeado Choco Paty - 850G",
+            "name_pt": "Ativador de Bronzeado Choco Paty - 850G",
+            "description_pt": "Ativador de Bronzeado com propriedades\n                            nutritivas do morango, chocolate ou pêssego, foram formulados\n                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão\n                            seu corpo com um bronzeado radiante e sua pele hidratada, macia\n                            e suavemente perfumada.",
+            "price": null,
+            "id": "produto2"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto3.jpg",
+            "alt_pt": "Ativador Morango Bronze - 850G",
+            "name_pt": "Ativador Morango Bronze - 850G",
+            "description_pt": "Ativador de bronzeado com propriedades\n                            nutritivas do morango, chocolate ou pêssego, foram formulados\n                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão\n                            seu corpo com um bronzeado radiante e sua pele hidratada, macia\n                            e suavemente perfumada.",
+            "price": null,
+            "id": "produto3"
+        },
+        {
+            "category_pt": "Ativadores",
+            "image": "/images/produto4.jpg",
+            "alt_pt": "Ativador Pêssego Bronze - 850G",
+            "name_pt": "Ativador Pêssego Bronze - 850G",
+            "description_pt": "ativador de bronzeado com propriedades\n                            nutritivas do morango, chocolate ou pêssego, foram formulados\n                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão\n                            seu corpo com um bronzeado radiante e sua pele hidratada, macia\n                            e suavemente perfumada.",
+            "price": null,
+            "id": "produto4"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto5.jpg",
+            "alt_pt": "Ativador De Bronzeado Neutro 850G",
+            "name_pt": "Ativador De Bronzeado Neutro - 850G",
+            "description_pt": "Ativador formulado com óleo de coco e manteiga de cacau, ativos\n                            que deixarão sua pela macia.",
+            "price": null,
+            "id": "produto5"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto6.jpg",
+            "alt_pt": "Ativador Café Fit 850G",
+            "name_pt": "Ativador Café Fit - 850G",
+            "description_pt": "Ativador de bronzeado com redutor de medidas com propriedades\n                            nutritivas do café e ativos, foi formulado com extratos de\n                            cânfora, café, d-pantenol e colágeno, que deixará seu corpo com um\n                            bronzeado radiante e sua pele hidratada, macia e perfumada a café.",
+            "price": null,
+            "id": "produto6"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto7.jpg",
+            "alt_pt": "",
+            "name_pt": "Ativador Linha Praia Café Fit - 100G",
+            "description_pt": "O Ativador de bronzeado com redutor de medidas com propriedades\n                            nutritivas do café e ativos, foi formulado com extratos de\n                            cânfora, café, d-pantenol e colágeno, que deixará seu corpo com um\n                            bronzeado radiante e sua pele hidratada, macia e perfumada a café.",
+            "price": null,
+            "id": "produto7"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto8.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto8"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto9.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador en Creme Tutti Frutti - 450g",
+            "description_pt": "Desperte seus sentidos e potencialize seus resultados com a combinação do ativador de bronzeado e o creme hidratante. Esta poderosa associação protege e hidrata a pele duas vezes mais, garantindo que você desfrute de uma sensação de conforto e nutrição prolongada. Sinta a diferença e deixe sua pele radiante com a suavidade da formulação e do aroma irresistível de tutti-frutti.",
+            "price": null,
+            "id": "produto9"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto10.jpg",
+            "alt_pt": "Ativador Linha Praia Morango Bronze 100G",
+            "name_pt": "Ativador Linha Praia Morango Bronze - 100G",
+            "description_pt": "Ativador de bronzeado com propriedades\n                            nutritivas do morango, chocolate ou pêssego, foram formulados\n                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão\n                            seu corpo com um bronzeado radiante e sua pele hidratada, macia\n                            e suavemente perfumada.",
+            "price": null,
+            "id": "produto10"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto11.jpg",
+            "alt_pt": "Ativador Linha Praia Choco Paty - 100G",
+            "name_pt": "Ativador Linha Praia Choco Paty - 100G",
+            "description_pt": "Ativador com propriedades\n                            nutritivas do morango, chocolate ou pêssego, foram formulados\n                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão\n                            seu corpo com um bronzeado radiante e sua pele hidratada, macia\n                            e suavemente perfumada.",
+            "price": null,
+            "id": "produto11"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto12.jpg",
+            "alt_pt": "Ativador Camomila Bronze 850G",
+            "name_pt": "Ativador Camomila Bronze - 850G",
+            "description_pt": "O ativador de bronzeado camomila foi formulado com óleo de coco, extrato de camomila e colágeno, ativos que deixarão sua pele macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto12"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto13.jpg",
+            "alt_pt": "Ativador em Creme Capuccino - 450G",
+            "name_pt": "Ativador em Creme Capuccino - 450G",
+            "description_pt": "Desperte seus sentidos e potencialize seus resultados com a combinação do ativador de bronzeado e o creme hidratante. Esta poderosa associação protege e hidrata a pele duas vezes mais, garantindo que você desfrute de uma sensação de conforto e nutrição prolongada. Sinta a diferença e deixe sua pele radiante com a suavidade da formulação e do aroma irresistível de cappuccino.",
+            "price": null,
+            "id": "produto13"
+        },
+        {
+            "category_pt": "ativadores",
+            "image": "/images/produto14.jpg",
+            "alt_pt": "Ativador Linha Praia Pêssego Bronze FPS 6 - 100G",
+            "name_pt": "Ativador Linha Praia Pêssego Bronze FPS 6 - 100G",
+            "description_pt": "Ativador de bronzeado com propriedades\n                            nutritivas do morango, chocolate ou pêssego, foram formulados\n                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão\n                            seu corpo com um bronzeado radiante e sua pele hidratada, macia\n                            e suavemente perfumada.",
+            "price": null,
+            "id": "produto14"
+        },
+        {
+            "category_pt": "potencializadores",
+            "image": "/images/produto15.jpg",
+            "alt_pt": "Intensificador Potência Máxima 3.0 850G",
+            "name_pt": "Intensificador Potência Máxima 3.0 - 850G",
+            "description_pt": "O Creme Potência Máxima 3.0 intensifica seu bronzeado e irá resgatar\n                            sua marquinha. Sua nova e potente fórmula age, principalmente, na\n                            pele para garantir hidratação e brilho. Além disso, garante um super\n                            resultado Neon e com um cheiro incrível, prolongando seu\n                            bronzeado por muito mais tempo.",
+            "price": null,
+            "id": "produto15"
+        },
+        {
+            "category_pt": "potencializadores",
+            "image": "/images/produto16.jpg",
+            "alt_pt": "Intensificador Potência Máxima 2.0 450G",
+            "name_pt": "Intensificador Potência Máxima 2.0 - 450G",
+            "description_pt": "O creme para intensificar seu bronzeado, que irá resgatar sua\n                            marquinha. Sua fórmula trabalha principalmente na pele, para garantir\n                            hidratação e brilho. Além disso, garante um super resultado\n                            neon.",
+            "price": null,
+            "id": "produto16"
+        },
+        {
+            "category_pt": "potencializadores",
+            "image": "/images/produto17.jpg",
+            "alt_pt": "Ametista UV II Acelerador de Bronzeado 900ML",
+            "name_pt": "Ametista UV II Acelerador de Bronzeado - 900ML",
+            "description_pt": "AMETISTA UV II é um acelerador que proporciona um bronzeado mais rápido e duradouro.",
+            "price": null,
+            "id": "produto17"
+        },
+        {
+            "category_pt": "potencializadores",
+            "image": "/images/produto18.jpg",
+            "alt_pt": "Intensificador Potência Máxima 3.0 450G",
+            "name_pt": "Intensificador Potência Máxima 3.0 - 450G",
+            "description_pt": "O Creme Potência Máxima 3.0 intensifica seu bronzeado e irá resgatar\n                            sua marquinha. Sua nova e potente fórmula age, principalmente, na\n                            pele para garantir hidratação e brilho. Além disso, garante um super\n                            resultado Neon e com um cheiro incrível, prolongando seu\n                            bronzeado por muito mais tempo.",
+            "price": null,
+            "id": "produto18"
+        },
+        {
+            "category_pt": "potencializadores",
+            "image": "/images/produto19.jpg",
+            "alt_pt": "Intensificador Potência Máxima 2.0 850G",
+            "name_pt": "Intensificador Potência Máxima 2.0 - 850G",
+            "description_pt": "O creme para intensificar seu bronzeado, que irá resgatar sua\n                            marquinha. Sua fórmula trabalha principalmente na pele, para garantir\n                            hidratação e brilho. Além disso, garante um super resultado\n                            neon.",
+            "price": null,
+            "id": "produto19"
+        },
+        {
+            "category_pt": "potencializadores",
+            "image": "/images/produto20.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto20"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto21.jpg",
+            "alt_pt": "Hidratante Iluminador Pêssego 1KG",
+            "name_pt": "Hidratante Iluminador Pêssego - 1KG",
+            "description_pt": "O hidratante contêm propriedades nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto21"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto22.jpg",
+            "alt_pt": "Hidratante Morango 1KG",
+            "name_pt": "Hidratante Morango - 1KG",
+            "description_pt": "O hidratante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto22"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto23.jpg",
+            "alt_pt": "Hidratante Chocolate 1KG",
+            "name_pt": "Hidratante Chocolate - 1KG",
+            "description_pt": "O hidratante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto23"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto24.jpg",
+            "alt_pt": "Hidratante Neutro 850G",
+            "name_pt": "Hidratante Neutro - 850G",
+            "description_pt": "A hidratação da pele após o processo de bronzeamento é uma etapa\n                            muito importante. O Hidratante Corporal Neutro foi formulado com\n                            colágeno e d-panthenol e ativos com ação emoliente, suavizante\n                            e hidratante. Possui leve textura e rápida absorção para sua pele\n                            ficar hidratada, macia e suave.",
+            "price": null,
+            "id": "produto24"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto25.jpg",
+            "alt_pt": "Hidratante Iluminador Linha Praia Chocolate 100G",
+            "name_pt": "Hidratante Iluminador Linha Praia Chocolate - 100G",
+            "description_pt": "O hidratante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto25"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto27.jpg",
+            "alt_pt": "Gel Pós Sol Linha Praia 100G",
+            "name_pt": "Gel Pós Sol Linha Praia - 100G",
+            "description_pt": "O Gel Pós Sol foi desenvolvido com extrato de algas\n                            marinhas e d-pantenol, com ativos emoliente, calmante e\n                            hidratante, possui rápida absorção e deixa sua pele calma e\n                            hidratada.",
+            "price": null,
+            "id": "produto27"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto28.jpg",
+            "alt_pt": "Hidratante de camomila 850g",
+            "name_pt": "Hidratante de camomila - 850g",
+            "description_pt": "Hidratação da pele após o processo de bronzeamento é uma etapa muito importante. O hidratante corporal de camomila foi formulado com colágeno e d-pantenol e ativos com ação emoliente, suavizante e hidratante. Possui leve textura e rápida absorção para sua pele ficar hidratada, macia e suave.",
+            "price": null,
+            "id": "produto28"
+        },
+        {
+            "category_pt": "hidratantes",
+            "image": "/images/produto30.jpg",
+            "alt_pt": "Hidratante Iluminador Linha Praia Pêssego 100G",
+            "name_pt": "Hidratante Iluminador Linha Praia Pêssego 100G",
+            "description_pt": "O hidratante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto30"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto31.jpg",
+            "alt_pt": "Esfoliante em Gel Pêssego 850G",
+            "name_pt": "Esfoliante em Gel Pêssego - 850G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do pêssego,\n                            morango e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto31"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto32.jpg",
+            "alt_pt": "Esfoliante Morango 850G",
+            "name_pt": "Esfoliante Morango - 850G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto32"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto33.jpg",
+            "alt_pt": "Esfoliante Neutro Creme 850G",
+            "name_pt": "Esfoliante Neutro Creme - 850G",
+            "description_pt": "A esfoliação é essencial no processo de renovação celular da\n                            pele, pois remove as células mortas de sua superfície,\n                            melhorando assim a absorção dos ativos da hidratação.",
+            "price": null,
+            "id": "produto33"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto34.jpg",
+            "alt_pt": "Esfoliante Chocolate 1KG",
+            "name_pt": "Esfoliante Chocolate - 1KG",
+            "description_pt": "O esfoliante Corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango e pêssego, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto34"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto35.jpg",
+            "alt_pt": "Esfoliante de camomila 850g",
+            "name_pt": "Esfoliante de camomila - 850g",
+            "description_pt": "A esfoliação é essencial no processo de renovação celular da pele, pois remove as células mortas de sua superfície, melhorando assim a absorção dos ativos da hidratação. O esfoliante corporal de camomila em creme contém colágeno e d-pantenol, além de ativos com ação emoliente e suavizante que proporcionarão uma pele mais macia, uniforme e pronta para a hidratação e cheirosa.",
+            "price": null,
+            "id": "produto35"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto36.jpg",
+            "alt_pt": "Gel Esfoliante Linha Praia Pêssego 100G",
+            "name_pt": "Gel Esfoliante Linha Praia Pêssego - 100G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto36"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto37.jpg",
+            "alt_pt": "Gel Esfoliante Linha Praia Morango 100G",
+            "name_pt": "Gel Esfoliante Linha Praia Morango - 100G",
+            "description_pt": "O esfoliantes corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto37"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto38.jpg",
+            "alt_pt": "Gel Esfoliante Linha Praia Chocolate 100G",
+            "name_pt": "Gel Esfoliante Linha Praia Chocolate - 100G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto38"
+        },
+        {
+            "category_pt": "esfoliantes",
+            "image": "/images/produto39.jpg",
+            "alt_pt": "Esfoliante em Gel Neutro 850G",
+            "name_pt": "Esfoliante em Gel Neutro - 850G",
+            "description_pt": "A esfoliação é essencial no processo de renovação celular da\n                            pele, pois remove as células mortas de sua superfície,\n                            melhorando assim a absorção dos ativos da hidratação.",
+            "price": null,
+            "id": "produto39"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto40.jpg",
+            "alt_pt": "Kit Banho de Lua Clareador",
+            "name_pt": "Kit Banho de Lua Clareador",
+            "description_pt": "Contém: Parafina 15g, OX Neutra 90ml, Pó Descolorante 40g, Dolomita 20g, Argila Branca 20g.",
+            "price": null,
+            "id": "produto40"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto41.jpg",
+            "alt_pt": "Óleo Iluminador Corporal 60ML",
+            "name_pt": "Óleo Iluminador Corporal 60ML",
+            "description_pt": "O Óleo Iluminador Patrícia Lobo Cosméticos possui um alto\n                            poder de hidratação, maciez e brilho para sua pele deixando-a\n                            perfumada.",
+            "price": null,
+            "id": "produto41"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto42.jpg",
+            "alt_pt": "Óleo Iluminador Corporal 500ML",
+            "name_pt": "Óleo Iluminador Corporal - 500ML",
+            "description_pt": "O Óleo Iluminador Patrícia Lobo Cosméticos possui um alto\n                            poder de hidratação, maciez e brilho para sua pele deixando-a\n                            perfumada.",
+            "price": null,
+            "id": "produto42"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto43.jpg",
+            "alt_pt": "Sabonete Líquido de Melancia 900ML",
+            "name_pt": "Sabonete Líquido de Melancia - 900ML",
+            "description_pt": "O Sabonete Líquido Corporal Patrícia Lobo Cosméticos é indicado para\n                            higiene corporal com propriedades hidratante e emoliente. O seu uso\n                            diário mantém sua pele limpa e saudável.",
+            "price": null,
+            "id": "produto43"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto44.jpg",
+            "alt_pt": "Sabonete Líquido de Melancia 5L",
+            "name_pt": "Sabonete Líquido de Melancia - 5L",
+            "description_pt": "O Sabonete Líquido Corporal Patrícia Lobo Cosméticos é indicado para\n                            higiene corporal com propriedades hidratante e emoliente. O seu uso\n                            diário mantém sua pele limpa e saudável.",
+            "price": null,
+            "id": "produto44"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto45.jpg",
+            "alt_pt": "Gel Pós Sol 950G",
+            "name_pt": "Gel Pós Sol - 950G",
+            "description_pt": "O Gel Pós Sol Patrícia Lobo foi desenvolvido com extrato de algas\n                            marinhas e d-pantenol, com ativos emoliente, calmante e\n                            hidratante, possui rápida absorção e deixa sua pele calma e\n                            hidratada.",
+            "price": null,
+            "id": "produto45"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto46.jpg",
+            "alt_pt": "Hidratante Iluminador Linha Praia Chocolate 100G",
+            "name_pt": "Hidratante Iluminador Linha Praia Chocolate - 100G",
+            "description_pt": "O hidratante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto46"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto47.jpg",
+            "alt_pt": "Gel Pós Sol Linha Praia 100G",
+            "name_pt": "Gel Pós Sol Linha Praia - 100G",
+            "description_pt": "O Gel Pós Sol foi desenvolvido com extrato de algas\n                            marinhas e d-pantenol, com ativos emoliente, calmante e\n                            hidratante, possui rápida absorção e deixa sua pele calma e\n                            hidratada.",
+            "price": null,
+            "id": "produto47"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto48.jpg",
+            "alt_pt": "Gel Esfoliante Linha Praia Pêssego 100G",
+            "name_pt": "Gel Esfoliante Linha Praia Pêssego - 100G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto48"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto50.jpg",
+            "alt_pt": "Gel Esfoliante Linha Praia Morango 100G",
+            "name_pt": "Gel Esfoliante Linha Praia Morango - 100G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto50"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto51.jpg",
+            "alt_pt": "Argila Verde 500G",
+            "name_pt": "Argila Verde - 500G",
+            "description_pt": "A ARGILA VERDE é 100% pura e natural. Por ser rica em minerais com\n                            ações adstringentes, secativas, bactericidas e cicatrizantes, a Argila Verde\n                            remove o excesso de oleosidade da pele, limpa profundamente os poros\n                            deixando assim, a pele mais firme, higienizada e bonita.",
+            "price": null,
+            "id": "produto51"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto55.jpg",
+            "alt_pt": "Hidratante Iluminador Linha Praia Morango 100G",
+            "name_pt": "Hidratante Iluminador Linha Praia Morango - 100G",
+            "description_pt": "O hidratantes corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,\n                            morango ou pêssego, possuem leve textura e rápida absorção\n                            para sua pele ficar hidratada, macia e suavemente perfumada.",
+            "price": null,
+            "id": "produto55"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto56.jpg",
+            "alt_pt": "Gel Esfoliante Linha Praia Chocolate 100G",
+            "name_pt": "Gel Esfoliante Linha Praia Chocolate - 100G",
+            "description_pt": "O esfoliante corporal, contêm propriedades\n                            nutritivas com colágeno e d-pantenol, com ativos do morango,\n                            pêssego e chocolate, com ação emoliente, cicatrizante e\n                            suavizante que proporcionarão uma pele macia, uniforme e\n                            pronta para a hidratação.",
+            "price": null,
+            "id": "produto56"
+        },
+        {
+            "category_pt": "cuidados-pele",
+            "image": "/images/produto57.jpg",
+            "alt_pt": "Balm Linha SOFT 900ML",
+            "name_pt": "Balm Linha Soft - 900ML",
+            "description_pt": "Balm Linha Soft",
+            "price": null,
+            "id": "produto57"
+        },
+        {
+            "category_pt": "oleo-corporal",
+            "image": "/images/produto58.jpg",
+            "alt_pt": "Óleo Iluminador Corporal 60ML",
+            "name_pt": "Óleo Iluminador Corporal 60ML",
+            "description_pt": "O Óleo Iluminador possui um alto\n                            poder de hidratação, maciez e brilho para sua pele deixando-a\n                            perfumada.",
+            "price": null,
+            "id": "produto58"
+        },
+        {
+            "category_pt": "oleo-corporal",
+            "image": "/images/produto59.jpg",
+            "alt_pt": "Óleo Iluminador Corporal 500ML",
+            "name_pt": "Óleo Iluminador Corporal - 500ML",
+            "description_pt": "O Óleo Iluminador possui um alto\n                            poder de hidratação, maciez e brilho para sua pele deixando-a\n                            perfumada.",
+            "price": null,
+            "id": "produto59"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto60.jpg",
+            "alt_pt": "OX 20 Vol. Camomila 900ML",
+            "name_pt": "OX 20 Vol. Camomila - 900ML",
+            "description_pt": "A Água Oxigenada Cremosa 20 Volumes é ideal para os processos de\n                            descolorações e colorações capilares. Recomenda-se usá-la junto\n                            com o pó descolorante.",
+            "price": null,
+            "id": "produto60"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto61.jpg",
+            "alt_pt": "OX 30 Vol. Morango 900ML",
+            "name_pt": "OX 30 Vol. Morango - 900ML",
+            "description_pt": "A OX 30% enriquecida com propriedades nutritivas do morango ou\n                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 30\n                            volumes é ideal para os processos de descolorações.",
+            "price": null,
+            "id": "produto61"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto62.jpg",
+            "alt_pt": "OX 40 Vol. Pêssego 900ML",
+            "name_pt": "OX 40 Vol. Pêssego - 900ML",
+            "description_pt": "A OX 30% enriquecida com propriedades nutritivas do pêssego,\n                            colágeno, d-pantenol e água oxigenada cremosa 40\n                            volumes é ideal para os processos de descolorações.",
+            "price": null,
+            "id": "produto62"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto63.jpg",
+            "alt_pt": "OX 40 Vol. NEUTRA 900ML",
+            "name_pt": "OX 40 Vol. Neutro - 900ML",
+            "description_pt": "A Ox Neutra é ideal para os processos de descolorações e colorações\n                            capilares.",
+            "price": null,
+            "id": "produto63"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto64.jpg",
+            "alt_pt": "OX 40 Vol. Pêssego 5L",
+            "name_pt": "OX 40 Vol. Pêssego 5L",
+            "description_pt": "A OX 30% enriquecida com propriedades nutritivas do pêssego,\n                            colágeno, d-pantenol e água oxigenada cremosa 40\n                            volumes é ideal para os processos de descolorações.",
+            "price": null,
+            "id": "produto64"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto65.jpg",
+            "alt_pt": "OX 40 Vol. Neutra 5L",
+            "name_pt": "OX 40 Vol. Neutra 5L",
+            "description_pt": "A Ox Neutra é ideal para os processos de descolorações e colorações\n                            capilares",
+            "price": null,
+            "id": "produto65"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto66.jpg",
+            "alt_pt": "OX 40 Vol. Chocolate 900ML",
+            "name_pt": "OX 40 Vol. Chocolate - 900ML",
+            "description_pt": "A OX 30% enriquecida com propriedades nutritivas do morango ou\n                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 40\n                            volumes é ideal para os processos de descolorações.",
+            "price": null,
+            "id": "produto66"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto67.jpg",
+            "alt_pt": "OX 40 Vol. Chocolate 5L",
+            "name_pt": "OX 40 Vol. Chocolate - 5L",
+            "description_pt": "A OX 30% enriquecida com propriedades nutritivas do morango ou\n                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 40\n                            volumes é ideal para os processos de descolorações.",
+            "price": null,
+            "id": "produto67"
+        },
+        {
+            "category_pt": "agua-oxigenada",
+            "image": "/images/produto68.jpg",
+            "alt_pt": "OX 30 Vol. Morango 5L",
+            "name_pt": "OX 30 Vol. Morango - 5L",
+            "description_pt": "A OX 30% enriquecida com propriedades nutritivas do morango ou\n                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 30\n                            volumes é ideal para os processos de descolorações.",
+            "price": null,
+            "id": "produto68"
+        },
+        {
+            "category_pt": "po-descolorante",
+            "image": "/images/produto69.jpg",
+            "alt_pt": "Pó Descolorante Morango 500G",
+            "name_pt": "Pó Descolorante Morango - 500G",
+            "description_pt": "O pó descolorante contêm propriedades nutritivas do morango,\n                            chocolate ou pêssego enriquecido com colágeno, d-pantenol e\n                            combinados com extrato glicólico. Garante um potente clareador\n                            de pelo com suave e agradável perfume de morango, chocolate ou pêssego.",
+            "price": null,
+            "id": "produto69"
+        },
+        {
+            "category_pt": "po-descolorante",
+            "image": "/images/produto70.jpg",
+            "alt_pt": "Pó Descolorante CAMOMILA 500G",
+            "name_pt": "Pó Descolorante Camomila - 500G",
+            "description_pt": "O pó descolorante camomila tem uma formulação livre de amônia e\n                            proporciona uma descoloração mais segura e sem odores irritantes,\n                            além disso, contém queratina que minimiza ainda mais a\n                            agressividade do processo.",
+            "price": null,
+            "id": "produto70"
+        },
+        {
+            "category_pt": "po-descolorante",
+            "image": "/images/produto71.jpg",
+            "alt_pt": "Pó Descolorante Pêssego 500G",
+            "name_pt": "Pó Descolorante Pêssego - 500G",
+            "description_pt": "O pós descolorante contêm propriedades nutritivas do morango,\n                            chocolate ou pêssego enriquecido com colágeno, d-pantenol e\n                            combinados com extrato glicólico. Garante um potente clareador\n                            de pelo com suave e agradável perfume de morango, chocolate ou pêssego.",
+            "price": null,
+            "id": "produto71"
+        },
+        {
+            "category_pt": "po-descolorante",
+            "image": "/images/produto72.jpg",
+            "alt_pt": "Pó Descolorante Neutro 500G",
+            "name_pt": "Pó Descolorante Neutro - 500G",
+            "description_pt": "O pó descolorante neutro é um potente clareador de pelos,\n                            com fórmula dust free, manuseio com agradável perfume, sem levantar pó.\n                            com vitamina d-panthenol e manteiga de cacau combinados de modo\n                            a garantir um clareamento rápido.",
+            "price": null,
+            "id": "produto72"
+        },
+        {
+            "category_pt": "po-descolorante",
+            "image": "/images/produto73.jpg",
+            "alt_pt": "Pó Descolorante Chocolate 500G",
+            "name_pt": "Pó Descolorante Chocolate - 500G",
+            "description_pt": "O pós descolorante contêm propriedades nutritivas do morango,\n                            chocolate ou pêssego enriquecido com colágeno, d-pantenol e\n                            combinados com extrato glicólico. Garante um potente clareador\n                            de pelo com suave e agradável perfume de morango, chocolate ou pêssego.",
+            "price": null,
+            "id": "produto73"
+        },
+        {
+            "category_pt": "corantes",
+            "image": "/images/produto74.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto74"
+        },
+        {
+            "category_pt": "corantes",
+            "image": "/images/produto75.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto75"
+        },
+        {
+            "category_pt": "corantes",
+            "image": "/images/produto76.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto76"
+        },
+        {
+            "category_pt": "corantes",
+            "image": "/images/produto77.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto77"
+        },
+        {
+            "category_pt": "corantes",
+            "image": "/images/produto78.jpg",
+            "alt_pt": "Ativador Potência Ultra All Skin 1KG",
+            "name_pt": "Ativador Potência Ultra All Skin - 1KG",
+            "description_pt": "Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua\n                            marquinha.\n                            Sua fórmula age principalmente na pele assegurando\n                            hidratação e brilho, além disso, garante um super resultado Neon.",
+            "price": null,
+            "id": "produto78"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto79.jpg",
+            "alt_pt": "Fita tigresa",
+            "name_pt": "Fita Tigresa",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto79"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto80.jpg",
+            "alt_pt": "Fita cereja",
+            "name_pt": "Fita Cereja",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto80"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto81.jpg",
+            "alt_pt": "Fita flowers",
+            "name_pt": "Fita Flowers",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto81"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto82.jpg",
+            "alt_pt": "Fita fundo de mar",
+            "name_pt": "Fita Fundo do Mar",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto82"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto83.jpg",
+            "alt_pt": "Fita laranja",
+            "name_pt": "Fita Laranja",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto83"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto84.jpg",
+            "alt_pt": "Fita azul clara",
+            "name_pt": "Fita Azul Claro",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto84"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto85.jpg",
+            "alt_pt": "Fita rosa",
+            "name_pt": "Fita Rosa",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto85"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto85.jpg",
+            "alt_pt": "Fita rosa",
+            "name_pt": "Fita Rosa",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto85"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto86.jpg",
+            "alt_pt": "Fita pimenta",
+            "name_pt": "Fita Pimenta",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto86"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto87.jpg",
+            "alt_pt": "Fita malhada",
+            "name_pt": "Fita Malhada",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto87"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto88.jpg",
+            "alt_pt": "Fita prata",
+            "name_pt": "Fita Prata",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto88"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto89.jpg",
+            "alt_pt": "Fita arco-íris",
+            "name_pt": "Fita Arco-íris",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto89"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto90.jpg",
+            "alt_pt": "Fita amarelo",
+            "name_pt": "Fita Amarelo",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto90"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto91.jpg",
+            "alt_pt": "Fita azul",
+            "name_pt": "Fita Azul",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto91"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto92.jpg",
+            "alt_pt": "Fita branca",
+            "name_pt": "Fita Branca",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto92"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto93.jpg",
+            "alt_pt": "Fita cinza",
+            "name_pt": "Fita Cinza",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto93"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto94.jpg",
+            "alt_pt": "Fita preto",
+            "name_pt": "Fita Preto",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto94"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto95.jpg",
+            "alt_pt": "Fita verde",
+            "name_pt": "Fita Verde",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto95"
+        },
+        {
+            "category_pt": "fitas",
+            "image": "/images/produto96.jpg",
+            "alt_pt": "Fita vermelho",
+            "name_pt": "Fita Vermelho",
+            "description_pt": "Fitas para realçar seu bronzeamento",
+            "price": null,
+            "id": "produto96"
+        }
+    ]
+}

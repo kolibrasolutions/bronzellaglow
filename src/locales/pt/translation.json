@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Início",
+    "products": "Produtos",
+    "about": "Sobre Nós",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Distribuição para Todo Brasil",
+    "subtitle": "Entrega rápida e segura dos melhores produtos para bronzeamento e estética"
+  },
+  "products_section": {
+    "title": "Nossos Produtos",
+    "subtitle": "Conheça nossa linha exclusiva para um bronzeado perfeito",
+    "filter_all": "Todos",
+    "add_to_quote": "Adicionar ao Orçamento",
+    "quantity": "Quantidade",
+    "product_image_alt": "Imagem do produto {{productName}}"
+  },
+  "contact_section": {
+    "title": "Contato",
+    "phone": "Telefone",
+    "email": "E-mail",
+    "cnpj": "CNPJ",
+    "address": "Endereço"
+  },
+  "footer": {
+    "rights": "© {{year}} Bronzella. Todos os direitos reservados."
+  },
+  "whatsapp_quote": {
+    "button_text": "Solicitar Orçamento via WhatsApp",
+    "message_header": "Olá! Gostaria de solicitar um orçamento para os seguintes produtos:",
+    "message_item": "- {{quantity}}x {{productName}}",
+    "message_total_placeholder": "\n\n(Total a ser calculado)"
+  },
+  "categories": {
+    "ativadores": "Ativadores",
+    "potencializadores": "Potencializadores",
+    "hidratantes": "Hidratantes",
+    "esfoliantes": "Esfoliantes",
+    "oleo-corporal": "Óleo corporal",
+    "agua-oxigenada": "Água Oxigenada",
+    "po-descolorante": "Pó descolorante",
+    "corantes": "Corantes",
+    "cuidados-pele": "Cuidados com a pele",
+    "fitas": "Fitas"
+  }
+}
+
