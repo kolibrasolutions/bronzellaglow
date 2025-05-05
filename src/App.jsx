@@ -4,13 +4,14 @@ import './App.css';
 import productsData from './data/products.json';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import { Label } from '@/components/ui/label'; // Import Label
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter, SheetClose } from '@/components/ui/sheet';
 import { ShoppingCart, Minus, Plus, Phone, Mail, MapPin, Building, X } from 'lucide-react';
 
 // --- Components --- 
 
+// Header: Ensure logo is displayed and cart icon triggers the sheet
 function Header({ cartItemCount }) {
   const { t, i18n } = useTranslation();
 
@@ -21,6 +22,7 @@ function Header({ cartItemCount }) {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        {/* Logo implementation - verified path /images/... is correct for files in public/images */}
         <img src="/images/bronzella-glow-logo.png" alt="Bronzella Glow Logo" className="h-10" /> 
         <nav className="hidden md:flex space-x-6 items-center">
           <a href="#home" className="text-gray-600 hover:text-yellow-600">{t('nav.home')}</a>
@@ -37,6 +39,7 @@ function Header({ cartItemCount }) {
               <SelectItem value="es">ES</SelectItem>
             </SelectContent>
           </Select>
+          {/* Cart Icon triggers the Sheet */}
           <SheetTrigger asChild>
             <Button variant="ghost" className="relative text-gray-600 hover:text-yellow-600">
               <ShoppingCart />
@@ -66,6 +69,7 @@ function Hero() {
   );
 }
 
+// Product Card: Add to cart button only adds item, doesn't open cart
 function ProductCard({ product, onAddToCart }) {
   const { t, i18n } = useTranslation();
   const [quantity, setQuantity] = useState(1);
@@ -76,9 +80,11 @@ function ProductCard({ product, onAddToCart }) {
     }
   };
 
+  // This function just adds the item, doesn't trigger cart opening
   const handleAddToCartClick = () => {
     onAddToCart(product, quantity);
     setQuantity(1); 
+    // Optionally add a toast notification here for feedback
   };
 
   const productName = product[`name_${i18n.language}`] || product.name_pt;
@@ -121,15 +127,13 @@ function ProductCard({ product, onAddToCart }) {
   );
 }
 
-// ProductList: Corrected filter logic and category mapping
 function ProductList({ products, categories, onAddToCart }) {
   const { t } = useTranslation();
-  const [filter, setFilter] = useState('todos'); 
+  const [filter, setFilter] = useState('todos');
 
-  // Filter products based on the selected category key
   const filteredProducts = filter === 'todos' 
     ? products 
-    : products.filter(p => p.category_key === filter);
+    : products.filter(p => p.category_pt.toLowerCase() === filter);
 
   return (
     <section id="products" className="py-12 bg-gray-50">
@@ -146,16 +150,14 @@ function ProductList({ products, categories, onAddToCart }) {
           >
             {t('products_section.filter_all')}
           </Button>
-          {/* Map through categories ensuring key and name are used correctly */}
           {categories.map(category => (
             <Button 
-              key={category.key} 
-              variant={filter === category.key ? 'default' : 'outline'}
-              onClick={() => setFilter(category.key)} 
-              className={`capitalize ${filter === category.key ? 'bg-yellow-500 text-white hover:bg-yellow-600' : ''}`}
+              key={category}
+              variant={filter === category ? 'default' : 'outline'}
+              onClick={() => setFilter(category)}
+              className={`capitalize ${filter === category ? 'bg-yellow-500 text-white hover:bg-yellow-600' : ''}`}
             >
-              {/* Use translation key based on category.key, fallback to category.name */}
-              {t(`categories.${category.key.replace(/-/g, '_')}`, category.name)} 
+              {t(`categories.${category.replace(/-/g, '_')}`, category)} 
             </Button>
           ))}
         </div>
@@ -169,12 +171,14 @@ function ProductList({ products, categories, onAddToCart }) {
   );
 }
 
+// QuoteCartSidebar: Includes form for Name/Phone and updated WhatsApp message logic
 function QuoteCartSidebar({ cartItems, onUpdateQuantity, onRemoveItem }) {
   const { t, i18n } = useTranslation();
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
   const whatsappNumber = "5511982901369"; 
 
+  // Function to generate the WhatsApp message including customer details
   const generateWhatsAppMessage = () => {
     let message = t('whatsapp_quote.message_header') + "\n\n";
     message += `${t('quote_sidebar.customer_name')}: ${customerName}\n`;
@@ -185,29 +189,41 @@ function QuoteCartSidebar({ cartItems, onUpdateQuantity, onRemoveItem }) {
       const productName = item.product[`name_${i18n.language}`] || item.product.name_pt;
       message += `${item.quantity}x ${productName}\n`; 
     });
-        
+    
+    // Add placeholder for total - calculation can be added here later if prices exist
+    // message += "\n" + t('whatsapp_quote.message_total_placeholder'); 
+    
     return encodeURIComponent(message);
   };
 
+  // Use state for the link to ensure it updates when form fields change
   const [whatsappLink, setWhatsappLink] = useState('');
 
   useEffect(() => {
+    // Update link whenever cart items, name, or phone change
     setWhatsappLink(`https://wa.me/${whatsappNumber}?text=${generateWhatsAppMessage()}`);
-  }, [cartItems, customerName, customerPhone, i18n.language]);
+  }, [cartItems, customerName, customerPhone, i18n.language]); // Add dependencies
 
+  // Handle form submission - currently just opens link, add validation if needed
   const handleRequestQuote = (e) => {
     if (!customerName || !customerPhone) {
-      e.preventDefault(); 
-      alert(t('quote_sidebar.form_validation_error')); 
-    } 
+      e.preventDefault(); // Prevent link opening if fields are empty
+      alert(t('quote_sidebar.form_validation_error')); // Simple alert, consider better UX
+    } else {
+      // Allow link to open
+      // Optionally reset form fields after submission
+      // setCustomerName('');
+      // setCustomerPhone('');
+    }
   };
 
   return (
-    <SheetContent className="flex flex-col w-[90vw] sm:w-[400px]">
+    <SheetContent className="flex flex-col">
       <SheetHeader>
         <SheetTitle>{t('quote_sidebar.title')}</SheetTitle>
       </SheetHeader>
       
+      {/* Cart Items List */}
       <div className="flex-1 overflow-y-auto py-4 px-1">
         {cartItems.length === 0 ? (
           <p className="text-center text-gray-500">{t('quote_sidebar.empty')}</p>
@@ -239,6 +255,7 @@ function QuoteCartSidebar({ cartItems, onUpdateQuantity, onRemoveItem }) {
         )}
       </div>
       
+      {/* Customer Info Form (only if cart is not empty) */}
       {cartItems.length > 0 && (
         <div className="px-1 py-4 border-t">
           <h4 className="text-md font-semibold mb-3">{t('quote_sidebar.your_info')}</h4>
@@ -268,13 +285,16 @@ function QuoteCartSidebar({ cartItems, onUpdateQuantity, onRemoveItem }) {
         </div>
       )}
       
+      {/* Footer with WhatsApp Button (only if cart is not empty) */}
       {cartItems.length > 0 && (
         <SheetFooter className="mt-auto px-1 pt-4 border-t">
+          {/* Use onClick to handle validation before potentially closing */}
           <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleRequestQuote} className="w-full">
             <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
               {t('whatsapp_quote.button_text')}
             </Button>
           </a>
+          {/* Removed SheetClose here, validation handles flow */}
         </SheetFooter>
       )}
     </SheetContent>
@@ -344,11 +364,7 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
+      </di// Redesigned Footer component - Refined Styling
 function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
@@ -359,73 +375,53 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+    <footer className="bg-gray-900 text-gray-300 py-12"> {/* Increased padding */}
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"> {/* Increased gap */}
+        {/* Column 1: Logo & About */}
         <div className="space-y-4">
-          <img src="/images/bronzella-glow-logo.png" alt="Bronzella Glow Logo" className="h-12 mb-3" />
-          <p className="text-sm leading-relaxed">{t("footer.about_short")}</p>
+          <img src="/images/bronzella-glow-logo.png" alt="Bronzella Glow Logo" className="h-12 mb-3" /> {/* Adjusted margin */}
+          <p className="text-sm leading-relaxed">{t("footer.about_short")}</p> {/* Added leading-relaxed */}
         </div>
+
+        {/* Column 2: Quick Links */}
         <div>
-          <h4 className="text-lg font-semibold mb-4 text-white">{t("footer.quick_links")}</h4>
-          <ul className="space-y-3 text-sm">
+          <h4 className="text-lg font-semibold mb-4 text-white">{t("footer.quick_links")}</h4> {/* Increased margin */}
+          <ul className="space-y-3 text-sm"> {/* Increased spacing */}
             <li><a href="#home" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.home")}</a></li>
             <li><a href="#products" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.products")}</a></li>
             <li><a href="#about" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.about")}</a></li>
             <li><a href="#contact" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.contact")}</a></li>
           </ul>
         </div>
+
+        {/* Column 3: Contact Info */}
         <div>
-          <h4 className="text-lg font-semibold mb-4 text-white">{t("nav.contact")}</h4>
-          <ul className="space-y-3 text-sm">
+          <h4 className="text-lg font-semibold mb-4 text-white">{t("nav.contact")}</h4> {/* Increased margin */}
+          <ul className="space-y-3 text-sm"> {/* Increased spacing */}
             <li className="flex items-start">
-              <Phone size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" />
+              <Phone size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" /> {/* Increased margin */}
               <a href={`tel:${contactInfo.phone1.replace(/[^0-9+]/g, '')}`} className="hover:text-yellow-500 transition-colors duration-200">{contactInfo.phone1}</a>
             </li>
             <li className="flex items-start">
-              <Mail size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" />
-              <a href={`mailto:${contactInfo.email}`} className="hover:text-yellow-500 transition-colors duration-200 break-all">{contactInfo.email}</a>
+              <Mail size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" /> {/* Increased margin */}
+              <a href={`mailto:${contactInfo.email}`} className="hover:text-yellow-500 transition-colors duration-200 break-all">{contactInfo.email}</a> {/* Added break-all */}
             </li>
             <li className="flex items-start">
-              <MapPin size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" />
-              <span className="leading-relaxed">{contactInfo.address}</span>
+              <MapPin size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" /> {/* Increased margin */}
+              <span className="leading-relaxed">{contactInfo.address}</span> {/* Added leading-relaxed */}
             </li>
           </ul>
         </div>
       </div>
-      <div className="mt-10 pt-8 border-t border-gray-700 text-center text-sm">
+      <div className="mt-10 pt-8 border-t border-gray-700 text-center text-sm"> {/* Adjusted margins */}
         <p>{t("footer.rights", { year: currentYear })}</p>
       </div>
     </footer>
   );
 }
 
-// --- Main App Component --- 
-
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  const [allProducts, setAllProducts] = useState([]); // Store all products with category keys
-  const [categories, setCategories] = useState([]); // Store categories with keys and names
-
-  // Load and process products and categories on mount
-  useEffect(() => {
-    // Generate category key from category_pt (lowercase, replace space with dash)
-    const productsWithKeys = productsData.products.map(p => ({
-      ...p,
-      category_key: p.category_pt.toLowerCase().replace(/ /g, '-')
-    }));
-    
-    // Create categories array with key and name from categories_pt
-    const uniqueCategoryKeys = [...new Set(productsWithKeys.map(p => p.category_key))];
-    const categoriesWithKeys = uniqueCategoryKeys.map(key => {
-      // Find the original name from the first product with this key (or from categories_pt if needed)
-      const originalName = productsData.products.find(p => p.category_pt.toLowerCase().replace(/ /g, '-') === key)?.category_pt || key;
-      return { key: key, name: originalName }; // Use original name for display
-    });
-
-    setAllProducts(productsWithKeys);
-    setCategories(categoriesWithKeys);
-
-  }, []); // Load once on mount
 
   const handleAddToCart = (product, quantity) => {
     setCartItems(prevItems => {
@@ -440,6 +436,7 @@ function App() {
         return [...prevItems, { product, quantity }];
       }
     });
+    // Optionally add feedback like a toast notification here
   };
 
   const handleUpdateQuantity = (productId, newQuantity) => {
@@ -460,6 +457,29 @@ function App() {
     setCartItems(prevItems => prevItems.filter(item => item.product.id !== productId));
   };
 
+  const { i18n } = useTranslation();
+  const [translatedProducts, setTranslatedProducts] = useState([]);
+
+  useEffect(() => {
+    const loadProductTranslations = async () => {
+      const productsWithTranslations = productsData.products.map(p => {
+        // Placeholder translations - replace with actual if available
+        return {
+          ...p,
+          name_en: p.name_pt + " (EN)", 
+          description_en: p.description_pt + " (EN)", 
+          alt_en: p.alt_pt + " (EN)", 
+          name_es: p.name_pt + " (ES)", 
+          description_es: p.description_pt + " (ES)", 
+          alt_es: p.alt_pt + " (ES)", 
+        };
+      });
+      setTranslatedProducts(productsWithTranslations);
+    };
+
+    loadProductTranslations();
+  }, [i18n.language]); 
+
   const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   return (
@@ -469,8 +489,8 @@ function App() {
         <main className="flex-grow">
           <Hero />
           <ProductList 
-            products={allProducts} 
-            categories={categories} // Pass processed categories
+            products={translatedProducts} 
+            categories={productsData.categories_pt} 
             onAddToCart={handleAddToCart} 
           />
           <AboutUs />
@@ -478,6 +498,7 @@ function App() {
         </main>
         <Footer /> 
       </div>
+      {/* Cart Sidebar Content is now rendered within Sheet */}
       <QuoteCartSidebar 
         cartItems={cartItems} 
         onUpdateQuantity={handleUpdateQuantity} 
