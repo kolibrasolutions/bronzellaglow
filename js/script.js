@@ -62,19 +62,12 @@ function initMobileMenu() {
 function applyFilter(filterValue) {
   productCards.forEach((card) => {
     const cardCategory = card.getAttribute("data-category");
+    // Reset animation class before changing display
+    card.classList.remove("animated"); 
     if (filterValue === "todos" || cardCategory === filterValue) {
       card.style.display = "block";
-      // A opacidade e transform são controlados pela classe 'animated' e CSS
-      // Garantir que não haja conflito aqui
-      // Se a animação for baseada em classe, não precisamos definir estilos inline aqui
-      // card.style.opacity = '1';
-      // card.style.transform = 'translateY(0)';
     } else {
       card.style.display = "none";
-      // card.style.opacity = '0';
-      // card.style.transform = 'translateY(20px)';
-      // Remover a classe animated para resetar a animação se reaparecer
-      card.classList.remove("animated");
     }
   });
   // Re-executar a verificação de animação após o filtro para animar os elementos recém-exibidos
@@ -289,8 +282,6 @@ function initAnimations() {
         getComputedStyle(element).display !== "none"
       ) {
         element.classList.add("animated");
-        // A animação (opacidade, transform) deve ser definida puramente no CSS
-        // associada à classe .animated
       } else if (!isElementInViewport(element) && element.classList.contains("animated")) {
          // Opcional: Remover a classe 'animated' quando sai da viewport para re-animar
          // element.classList.remove('animated');
@@ -299,19 +290,14 @@ function initAnimations() {
   }
 
   // Inicializar elementos NÃO PRODUTOS com opacidade 0 e transform
-  // Os produtos são controlados pelo filtro e pela classe .animated via CSS
   animatedElements.forEach((element) => {
     if (!element.classList.contains("product-card")) {
       // Define o estado inicial para elementos que não são produtos
       element.style.opacity = "0";
       element.style.transform = "translateY(30px)";
       element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    } else {
-        // Para os product-cards, garantir que a transição exista para a classe .animated
-        element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-        // O estado inicial (opacity: 0, transform: translateY(30px)) deve vir do CSS
-        // para a classe .product-card SEM a classe .animated
-    }
+    } 
+    // O estado inicial e a transição dos product-cards são definidos pelo CSS injetado abaixo
   });
 
   // Adicionar evento de scroll
@@ -325,8 +311,8 @@ function initAnimations() {
 // Inicializar todas as funcionalidades quando o DOM estiver carregado
 document.addEventListener("DOMContentLoaded", initApp);
 
-// Adicionar estilos CSS para notificações
-(function addNotificationStyles() {
+// Adicionar estilos CSS necessários (Notificações e Animação dos Cards)
+(function addRequiredStyles() {
   const style = document.createElement("style");
   style.textContent = `
         .notification {
@@ -357,8 +343,8 @@ document.addEventListener("DOMContentLoaded", initApp);
             background-color: #f44336;
         }
 
-        /* Estilos para animação dos cards - Devem estar no CSS principal */
-        /* .product-card {
+        /* Estilos para animação dos cards - Injetados para garantir */
+        .product-card {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -366,7 +352,14 @@ document.addEventListener("DOMContentLoaded", initApp);
         .product-card.animated {
             opacity: 1;
             transform: translateY(0);
-        } */
+        }
+        /* Garantir que o display do filtro prevaleça */
+        .product-card[style*="display: block"] {
+            display: block !important; 
+        }
+        .product-card[style*="display: none"] {
+            display: none !important;
+        }
     `;
   document.head.appendChild(style);
 })();
