@@ -131,30 +131,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Removed the redundant observer setup block
 
     // Product Filters
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
+    // const filterButtons = document.querySelectorAll('.filter-btn');
+    // const productCards = document.querySelectorAll('.product-card');
 
-    if (filterButtons.length > 0 && productCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Update active button state
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+    // if (filterButtons.length > 0 && productCards.length > 0) {
+    //     filterButtons.forEach(button => {
+    //         button.addEventListener('click', () => {
+    //             // Update active button state
+    //             filterButtons.forEach(btn => btn.classList.remove('active'));
+    //             button.classList.add('active');
 
-                const filter = button.getAttribute('data-filter');
+    //             const filter = button.getAttribute('data-filter');
 
-                // Show/hide products based on filter
-                productCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    if (filter === 'todos' || category === filter) {
-                        card.style.display = 'flex'; // Use flex as set in CSS
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
+    //             // Show/hide products based on filter
+    //             productCards.forEach(card => {
+    //                 const category = card.getAttribute('data-category');
+    //                 if (filter === 'todos' || category === filter) {
+    //                     card.style.display = 'flex'; // Use flex as set in CSS
+    //                 } else {
+    //                     card.style.display = 'none';
+    //                 }
+    //             });
+    //         });
+    //     });
+    // }
 
     // Quantity Selector Logic
     const quantitySelectors = document.querySelectorAll('.quantity-selector');
@@ -211,6 +211,13 @@ document.addEventListener('DOMContentLoaded', function() {
                  }
             }
         });
+    });
+
+    const productCards = document.querySelectorAll(".product-card");
+    productCards.forEach((card) => {
+        card.style.display = "flex";
+        card.style.visibility = "visible";
+        card.style.opacity = "1";
     });
 
 });

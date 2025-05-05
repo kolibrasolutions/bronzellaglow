@@ -410,8 +410,10 @@ section {
     transition: var(--transition-normal);
     max-width: 220px;
     margin: 0 auto;
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .product-card:hover {
@@ -451,9 +453,9 @@ section {
 
 .product-info {
     padding: var(--spacing-sm);
-    display: flex; /* Added */
-    flex-direction: column; /* Added */
-    flex-grow: 1; /* Added */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .product-info h3 {
@@ -467,14 +469,13 @@ section {
     color: var(--gray);
     margin-bottom: 12px;
     font-size: 0.9rem;
-    flex-grow: 1; /* Allow description to take available space */
-    /* Limit description to 3 lines with ellipsis */
+    flex-grow: 1;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 45px; /* Approximate height for 3 lines */
+    min-height: 45px;
 }
 
 /* Testimonials */
