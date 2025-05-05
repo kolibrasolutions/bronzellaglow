@@ -60,6 +60,7 @@ function initMobileMenu() {
 
 // Função auxiliar para aplicar o filtro
 function applyFilter(filterValue) {
+  const productCards = document.querySelectorAll(".product-card"); // Buscar dinamicamente
   productCards.forEach((card) => {
     const cardCategory = card.getAttribute("data-category");
     // Reset animation class before changing display
