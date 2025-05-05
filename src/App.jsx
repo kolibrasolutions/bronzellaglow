@@ -2,14 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import './App.css';
 import productsData from './data/products.json';
-import { Button } from '@/components/ui/button'; // Assuming shadcn/ui is installed
-import { Input } from '@/components/ui/input'; // Assuming shadcn/ui is installed
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Assuming shadcn/ui is installed
-import { ShoppingCart, Minus, Plus, Phone, Mail, MapPin, Building } from 'lucide-react'; // Lucide icons
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label'; // Import Label
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetFooter, SheetClose } from '@/components/ui/sheet';
+import { ShoppingCart, Minus, Plus, Phone, Mail, MapPin, Building, X } from 'lucide-react';
 
 // --- Components --- 
 
-function Header() {
+// Header: Ensure logo is displayed and cart icon triggers the sheet
+function Header({ cartItemCount }) {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -19,8 +22,8 @@ function Header() {
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Replace with actual logo if available */}
-        <h1 className="text-2xl font-bold text-yellow-600">Bronzella</h1> 
+        {/* Logo implementation - verified path /images/... is correct for files in public/images */}
+        <img src="/images/bronzella-glow-logo.png" alt="Bronzella Glow Logo" className="h-10" /> 
         <nav className="hidden md:flex space-x-6 items-center">
           <a href="#home" className="text-gray-600 hover:text-yellow-600">{t('nav.home')}</a>
           <a href="#products" className="text-gray-600 hover:text-yellow-600">{t('nav.products')}</a>
@@ -36,11 +39,19 @@ function Header() {
               <SelectItem value="es">ES</SelectItem>
             </SelectContent>
           </Select>
-          <a href="#quote-cart" className="text-gray-600 hover:text-yellow-600">
-            <ShoppingCart />
-          </a>
+          {/* Cart Icon triggers the Sheet */}
+          <SheetTrigger asChild>
+            <Button variant="ghost" className="relative text-gray-600 hover:text-yellow-600">
+              <ShoppingCart />
+              {cartItemCount > 0 && (
+                <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full transform translate-x-1/2 -translate-y-1/2">
+                  {cartItemCount}
+                </span>
+              )}
+            </Button>
+          </SheetTrigger>
         </nav>
-        {/* Add mobile menu button here if needed */}
+        {/* TODO: Add mobile menu button if needed */}
       </div>
     </header>
   );
@@ -48,7 +59,6 @@ function Header() {
 
 function Hero() {
   const { t } = useTranslation();
-  // Basic hero, consider adding carousel later if needed based on reference image
   return (
     <section id="home" className="relative bg-cover bg-center h-[60vh] text-white" style={{ backgroundImage: "url('/images/slide1.png')" }}>
       <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-center items-center text-center px-4">
@@ -59,6 +69,7 @@ function Hero() {
   );
 }
 
+// Product Card: Add to cart button only adds item, doesn't open cart
 function ProductCard({ product, onAddToCart }) {
   const { t, i18n } = useTranslation();
   const [quantity, setQuantity] = useState(1);
@@ -69,12 +80,13 @@ function ProductCard({ product, onAddToCart }) {
     }
   };
 
+  // This function just adds the item, doesn't trigger cart opening
   const handleAddToCartClick = () => {
     onAddToCart(product, quantity);
-    setQuantity(1); // Reset quantity after adding
+    setQuantity(1); 
+    // Optionally add a toast notification here for feedback
   };
 
-  // Get translated fields based on current language
   const productName = product[`name_${i18n.language}`] || product.name_pt;
   const productDescription = product[`description_${i18n.language}`] || product.description_pt;
   const productAlt = product[`alt_${i18n.language}`] || product.alt_pt;
@@ -86,16 +98,15 @@ function ProductCard({ product, onAddToCart }) {
       </div>
       <div className="p-4 flex flex-col flex-grow">
         <h3 className="text-lg font-semibold mb-2 h-14 overflow-hidden">{productName}</h3>
-        {/* Placeholder for price - easy to add later */}
-        {/* {product.price && <p className="text-xl font-bold text-green-600 mb-2">R$ {product.price.toFixed(2)}</p>} */}
         <p className="text-sm text-gray-600 mb-4 flex-grow">{productDescription}</p>
         <div className="flex items-center justify-between mb-4">
-          <label className="text-sm font-medium">{t('products_section.quantity')}:</label>
+          <Label htmlFor={`quantity-${product.id}`} className="text-sm font-medium">{t('products_section.quantity')}:</Label>
           <div className="flex items-center border rounded">
             <Button variant="ghost" size="sm" onClick={() => handleQuantityChange(quantity - 1)} className="px-2">
               <Minus size={16} />
             </Button>
             <Input 
+              id={`quantity-${product.id}`}
               type="number" 
               value={quantity} 
               onChange={(e) => handleQuantityChange(parseInt(e.target.value, 10) || 1)} 
@@ -146,7 +157,7 @@ function ProductList({ products, categories, onAddToCart }) {
               onClick={() => setFilter(category)}
               className={`capitalize ${filter === category ? 'bg-yellow-500 text-white hover:bg-yellow-600' : ''}`}
             >
-              {t(`categories.${category.replace(/-/g, '_')}`, category)} {/* Translate category */}
+              {t(`categories.${category.replace(/-/g, '_')}`, category)} 
             </Button>
           ))}
         </div>
@@ -160,70 +171,143 @@ function ProductList({ products, categories, onAddToCart }) {
   );
 }
 
-function QuoteCart({ cartItems, onUpdateQuantity, onRemoveItem }) {
+// QuoteCartSidebar: Includes form for Name/Phone and updated WhatsApp message logic
+function QuoteCartSidebar({ cartItems, onUpdateQuantity, onRemoveItem }) {
   const { t, i18n } = useTranslation();
-  const whatsappNumber = "5511982901369"; // Format for WhatsApp API (Country Code + Number)
+  const [customerName, setCustomerName] = useState('');
+  const [customerPhone, setCustomerPhone] = useState('');
+  const whatsappNumber = "5511982901369"; 
 
+  // Function to generate the WhatsApp message including customer details
   const generateWhatsAppMessage = () => {
-    let message = t('whatsapp_quote.message_header') + "\n";
+    let message = t('whatsapp_quote.message_header') + "\n\n";
+    message += `${t('quote_sidebar.customer_name')}: ${customerName}\n`;
+    message += `${t('quote_sidebar.customer_phone')}: ${customerPhone}\n\n`;
+    message += t('quote_sidebar.items_header') + "\n";
+    
     cartItems.forEach(item => {
       const productName = item.product[`name_${i18n.language}`] || item.product.name_pt;
-      message += t('whatsapp_quote.message_item', { quantity: item.quantity, productName: productName }) + "\n";
+      message += `${item.quantity}x ${productName}\n`; 
     });
+    
     // Add placeholder for total - calculation can be added here later if prices exist
-    message += t('whatsapp_quote.message_total_placeholder'); 
+    // message += "\n" + t('whatsapp_quote.message_total_placeholder'); 
+    
     return encodeURIComponent(message);
   };
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${generateWhatsAppMessage()}`;
+  // Use state for the link to ensure it updates when form fields change
+  const [whatsappLink, setWhatsappLink] = useState('');
 
-  if (cartItems.length === 0) {
-    return null; // Don't show cart if empty
-  }
+  useEffect(() => {
+    // Update link whenever cart items, name, or phone change
+    setWhatsappLink(`https://wa.me/${whatsappNumber}?text=${generateWhatsAppMessage()}`);
+  }, [cartItems, customerName, customerPhone, i18n.language]); // Add dependencies
+
+  // Handle form submission - currently just opens link, add validation if needed
+  const handleRequestQuote = (e) => {
+    if (!customerName || !customerPhone) {
+      e.preventDefault(); // Prevent link opening if fields are empty
+      alert(t('quote_sidebar.form_validation_error')); // Simple alert, consider better UX
+    } else {
+      // Allow link to open
+      // Optionally reset form fields after submission
+      // setCustomerName('');
+      // setCustomerPhone('');
+    }
+  };
 
   return (
-    <section id="quote-cart" className="py-8 bg-white sticky bottom-0 shadow-lg border-t">
-      <div className="container mx-auto px-4">
-        <h3 className="text-xl font-semibold mb-4 text-center">{t('products_section.add_to_quote')}</h3>
-        {cartItems.map(item => {
-           const productName = item.product[`name_${i18n.language}`] || item.product.name_pt;
-           return (
-            <div key={item.product.id} className="flex justify-between items-center mb-2 border-b pb-2">
-              <span className="text-sm flex-1 mr-2">{productName}</span>
-              <div className="flex items-center">
-                 <Button variant="ghost" size="sm" onClick={() => onUpdateQuantity(item.product.id, item.quantity - 1)} className="px-1 h-6">
-                    <Minus size={14} />
-                 </Button>
-                 <span className="mx-2 text-sm">{item.quantity}</span>
-                 <Button variant="ghost" size="sm" onClick={() => onUpdateQuantity(item.product.id, item.quantity + 1)} className="px-1 h-6">
-                    <Plus size={14} />
-                 </Button>
-              </div>
-              <Button variant="ghost" size="sm" onClick={() => onRemoveItem(item.product.id)} className="ml-2 text-red-500 px-1 h-6">
-                 X
-              </Button>
-            </div>
-           );
-        })}
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block mt-4">
-          <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-            {t('whatsapp_quote.button_text')}
-          </Button>
-        </a>
+    <SheetContent className="flex flex-col">
+      <SheetHeader>
+        <SheetTitle>{t('quote_sidebar.title')}</SheetTitle>
+      </SheetHeader>
+      
+      {/* Cart Items List */}
+      <div className="flex-1 overflow-y-auto py-4 px-1">
+        {cartItems.length === 0 ? (
+          <p className="text-center text-gray-500">{t('quote_sidebar.empty')}</p>
+        ) : (
+          <div className="space-y-4">
+            {cartItems.map(item => {
+              const productName = item.product[`name_${i18n.language}`] || item.product.name_pt;
+              return (
+                <div key={item.product.id} className="flex justify-between items-center border-b pb-3">
+                  <div className="flex-1 mr-2">
+                    <p className="text-sm font-medium">{productName}</p>
+                  </div>
+                  <div className="flex items-center mx-2">
+                    <Button variant="outline" size="icon" onClick={() => onUpdateQuantity(item.product.id, item.quantity - 1)} className="h-7 w-7">
+                      <Minus size={14} />
+                    </Button>
+                    <span className="mx-3 text-sm font-medium w-4 text-center">{item.quantity}</span>
+                    <Button variant="outline" size="icon" onClick={() => onUpdateQuantity(item.product.id, item.quantity + 1)} className="h-7 w-7">
+                      <Plus size={14} />
+                    </Button>
+                  </div>
+                  <Button variant="ghost" size="icon" onClick={() => onRemoveItem(item.product.id)} className="ml-2 text-red-500 h-7 w-7">
+                    <X size={16} />
+                  </Button>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
-    </section>
+      
+      {/* Customer Info Form (only if cart is not empty) */}
+      {cartItems.length > 0 && (
+        <div className="px-1 py-4 border-t">
+          <h4 className="text-md font-semibold mb-3">{t('quote_sidebar.your_info')}</h4>
+          <div className="space-y-3">
+            <div>
+              <Label htmlFor="customerName">{t('quote_sidebar.customer_name')}</Label>
+              <Input 
+                id="customerName" 
+                value={customerName} 
+                onChange={(e) => setCustomerName(e.target.value)} 
+                placeholder={t('quote_sidebar.name_placeholder')}
+                required
+              />
+            </div>
+            <div>
+              <Label htmlFor="customerPhone">{t('quote_sidebar.customer_phone')}</Label>
+              <Input 
+                id="customerPhone" 
+                type="tel" 
+                value={customerPhone} 
+                onChange={(e) => setCustomerPhone(e.target.value)} 
+                placeholder={t('quote_sidebar.phone_placeholder')}
+                required
+              />
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {/* Footer with WhatsApp Button (only if cart is not empty) */}
+      {cartItems.length > 0 && (
+        <SheetFooter className="mt-auto px-1 pt-4 border-t">
+          {/* Use onClick to handle validation before potentially closing */}
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleRequestQuote} className="w-full">
+            <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+              {t('whatsapp_quote.button_text')}
+            </Button>
+          </a>
+          {/* Removed SheetClose here, validation handles flow */}
+        </SheetFooter>
+      )}
+    </SheetContent>
   );
 }
 
 function AboutUs() {
   const { t } = useTranslation();
-  // Add content for About Us section later if provided
   return (
     <section id="about" className="py-12 bg-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-4">{t('nav.about')}</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          {/* Placeholder text - replace with actual content */}
           Somos a Bronzella, sua parceira ideal para um bronzeado perfeito e duradouro. Oferecemos produtos de alta qualidade com entrega rápida e segura em todo o Brasil e selecionados países. Nossa missão é realçar sua beleza natural com segurança e eficácia.
         </p>
       </div>
@@ -249,30 +333,30 @@ function Contact() {
         </div>
         <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
           <div className="space-y-4">
-            <div className="flex items-center">
-              <Phone size={20} className="mr-3 text-yellow-600" />
+            <div className="flex items-start">
+              <Phone size={20} className="mr-3 text-yellow-600 mt-1" />
               <div>
                 <span className="font-semibold">{t('contact_section.phone')}:</span> 
-                <a href={`tel:${contactInfo.phone1}`} className="text-gray-700 hover:text-yellow-600 block">{contactInfo.phone1}</a>
-                <a href={`tel:${contactInfo.phone2}`} className="text-gray-700 hover:text-yellow-600 block">{contactInfo.phone2}</a>
+                <a href={`tel:${contactInfo.phone1.replace(/[^0-9+]/g, '')}`} className="text-gray-700 hover:text-yellow-600 block">{contactInfo.phone1}</a>
+                <a href={`tel:${contactInfo.phone2.replace(/[^0-9+]/g, '')}`} className="text-gray-700 hover:text-yellow-600 block">{contactInfo.phone2}</a>
               </div>
             </div>
-            <div className="flex items-center">
-              <Mail size={20} className="mr-3 text-yellow-600" />
+            <div className="flex items-start">
+              <Mail size={20} className="mr-3 text-yellow-600 mt-1" />
               <div>
                 <span className="font-semibold">{t('contact_section.email')}:</span> 
                 <a href={`mailto:${contactInfo.email}`} className="text-gray-700 hover:text-yellow-600 block">{contactInfo.email}</a>
               </div>
             </div>
-             <div className="flex items-center">
-              <Building size={20} className="mr-3 text-yellow-600" />
+             <div className="flex items-start">
+              <Building size={20} className="mr-3 text-yellow-600 mt-1" />
               <div>
                 <span className="font-semibold">{t('contact_section.cnpj')}:</span> 
                 <span className="text-gray-700 block">{contactInfo.cnpj}</span>
               </div>
             </div>
-            <div className="flex items-center">
-              <MapPin size={20} className="mr-3 text-yellow-600" />
+            <div className="flex items-start">
+              <MapPin size={20} className="mr-3 text-yellow-600 mt-1" />
               <div>
                 <span className="font-semibold">{t('contact_section.address')}:</span> 
                 <span className="text-gray-700 block">{contactInfo.address}</span>
@@ -280,24 +364,61 @@ function Contact() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
+      </di// Redesigned Footer component - Refined Styling
 function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const contactInfo = {
+    phone1: "+55 11 98290-1369",
+    email: "Bronzellaprodutoosbronzeamento@gmail.com",
+    address: "Rua Coronel Murça, 56, Brás, São Paulo, Brasil"
+  };
+
   return (
-    <footer className="bg-gray-800 text-white py-6">
-      <div className="container mx-auto px-4 text-center">
-        <p>{t('footer.rights', { year: currentYear })}</p>
+    <footer className="bg-gray-900 text-gray-300 py-12"> {/* Increased padding */}
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12"> {/* Increased gap */}
+        {/* Column 1: Logo & About */}
+        <div className="space-y-4">
+          <img src="/images/bronzella-glow-logo.png" alt="Bronzella Glow Logo" className="h-12 mb-3" /> {/* Adjusted margin */}
+          <p className="text-sm leading-relaxed">{t("footer.about_short")}</p> {/* Added leading-relaxed */}
+        </div>
+
+        {/* Column 2: Quick Links */}
+        <div>
+          <h4 className="text-lg font-semibold mb-4 text-white">{t("footer.quick_links")}</h4> {/* Increased margin */}
+          <ul className="space-y-3 text-sm"> {/* Increased spacing */}
+            <li><a href="#home" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.home")}</a></li>
+            <li><a href="#products" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.products")}</a></li>
+            <li><a href="#about" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.about")}</a></li>
+            <li><a href="#contact" className="hover:text-yellow-500 transition-colors duration-200">{t("nav.contact")}</a></li>
+          </ul>
+        </div>
+
+        {/* Column 3: Contact Info */}
+        <div>
+          <h4 className="text-lg font-semibold mb-4 text-white">{t("nav.contact")}</h4> {/* Increased margin */}
+          <ul className="space-y-3 text-sm"> {/* Increased spacing */}
+            <li className="flex items-start">
+              <Phone size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" /> {/* Increased margin */}
+              <a href={`tel:${contactInfo.phone1.replace(/[^0-9+]/g, '')}`} className="hover:text-yellow-500 transition-colors duration-200">{contactInfo.phone1}</a>
+            </li>
+            <li className="flex items-start">
+              <Mail size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" /> {/* Increased margin */}
+              <a href={`mailto:${contactInfo.email}`} className="hover:text-yellow-500 transition-colors duration-200 break-all">{contactInfo.email}</a> {/* Added break-all */}
+            </li>
+            <li className="flex items-start">
+              <MapPin size={16} className="mr-3 mt-1 text-yellow-500 flex-shrink-0" /> {/* Increased margin */}
+              <span className="leading-relaxed">{contactInfo.address}</span> {/* Added leading-relaxed */}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="mt-10 pt-8 border-t border-gray-700 text-center text-sm"> {/* Adjusted margins */}
+        <p>{t("footer.rights", { year: currentYear })}</p>
       </div>
     </footer>
   );
 }
-
-// --- Main App Component --- 
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -306,17 +427,16 @@ function App() {
     setCartItems(prevItems => {
       const existingItem = prevItems.find(item => item.product.id === product.id);
       if (existingItem) {
-        // Update quantity if item already exists
         return prevItems.map(item => 
           item.product.id === product.id 
             ? { ...item, quantity: item.quantity + quantity } 
             : item
         );
       } else {
-        // Add new item to cart
         return [...prevItems, { product, quantity }];
       }
     });
+    // Optionally add feedback like a toast notification here
   };
 
   const handleUpdateQuantity = (productId, newQuantity) => {
@@ -337,56 +457,54 @@ function App() {
     setCartItems(prevItems => prevItems.filter(item => item.product.id !== productId));
   };
 
-  // Add product translations to the product data itself
-  // This is a simplified approach. For larger apps, consider fetching translated product data.
   const { i18n } = useTranslation();
   const [translatedProducts, setTranslatedProducts] = useState([]);
 
   useEffect(() => {
-    // Function to simulate fetching/loading translations for products
     const loadProductTranslations = async () => {
-      // In a real app, you might fetch this from an API based on i18n.language
-      // For now, we'll just map the existing data structure
       const productsWithTranslations = productsData.products.map(p => {
-        // You would need actual translations here. Using placeholders for now.
-        // Example: Fetch from API or have a more complex JSON structure
+        // Placeholder translations - replace with actual if available
         return {
           ...p,
-          name_en: p.name_pt + " (EN)", // Placeholder
-          description_en: p.description_pt + " (EN)", // Placeholder
-          alt_en: p.alt_pt + " (EN)", // Placeholder
-          name_es: p.name_pt + " (ES)", // Placeholder
-          description_es: p.description_pt + " (ES)", // Placeholder
-          alt_es: p.alt_pt + " (ES)", // Placeholder
+          name_en: p.name_pt + " (EN)", 
+          description_en: p.description_pt + " (EN)", 
+          alt_en: p.alt_pt + " (EN)", 
+          name_es: p.name_pt + " (ES)", 
+          description_es: p.description_pt + " (ES)", 
+          alt_es: p.alt_pt + " (ES)", 
         };
       });
       setTranslatedProducts(productsWithTranslations);
     };
 
     loadProductTranslations();
-    // Rerun when language changes - ideally fetch new data
   }, [i18n.language]); 
 
+  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow">
-        <Hero />
-        <ProductList 
-          products={translatedProducts} 
-          categories={productsData.categories_pt} 
-          onAddToCart={handleAddToCart} 
-        />
-        <AboutUs />
-        <Contact />
-      </main>
-      <QuoteCart 
+    <Sheet> 
+      <div className="flex flex-col min-h-screen">
+        <Header cartItemCount={cartItemCount} /> 
+        <main className="flex-grow">
+          <Hero />
+          <ProductList 
+            products={translatedProducts} 
+            categories={productsData.categories_pt} 
+            onAddToCart={handleAddToCart} 
+          />
+          <AboutUs />
+          <Contact />
+        </main>
+        <Footer /> 
+      </div>
+      {/* Cart Sidebar Content is now rendered within Sheet */}
+      <QuoteCartSidebar 
         cartItems={cartItems} 
         onUpdateQuantity={handleUpdateQuantity} 
         onRemoveItem={handleRemoveItem} 
       />
-      <Footer />
-    </div>
+    </Sheet>
   );
 }
 

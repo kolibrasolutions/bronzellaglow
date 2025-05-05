@@ -25,13 +25,26 @@
     "address": "Address"
   },
   "footer": {
-    "rights": "© {{year}} Bronzella. All rights reserved."
+    "rights": "© {{year}} Bronzella. All rights reserved.",
+    "about_short": "Your ideal partner for a perfect and lasting tan.",
+    "quick_links": "Quick Links"
   },
   "whatsapp_quote": {
     "button_text": "Request Quote via WhatsApp",
     "message_header": "Hello! I would like to request a quote for the following products:",
     "message_item": "- {{quantity}}x {{productName}}",
     "message_total_placeholder": "\n\n(Total to be calculated)"
+  },
+  "quote_sidebar": {
+    "title": "Your Quote",
+    "empty": "Your quote cart is empty.",
+    "your_info": "Your Information",
+    "customer_name": "Name",
+    "name_placeholder": "Your full name",
+    "customer_phone": "Phone",
+    "phone_placeholder": "Your phone number (with area code)",
+    "items_header": "Items:",
+    "form_validation_error": "Please fill in your name and phone number to request the quote."
   },
   "categories": {
     "ativadores": "Activators",
