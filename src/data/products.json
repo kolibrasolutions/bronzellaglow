@@ -725,15 +725,6 @@
         },
         {
             "category_pt": "fitas",
-            "image": "/images/produto85.jpg",
-            "alt_pt": "Fita rosa",
-            "name_pt": "Fita Rosa",
-            "description_pt": "Fitas para realçar seu bronzeamento",
-            "price": null,
-            "id": "produto85"
-        },
-        {
-            "category_pt": "fitas",
             "image": "/images/produto86.jpg",
             "alt_pt": "Fita pimenta",
             "name_pt": "Fita Pimenta",
