@@ -402,9 +402,22 @@ function Footer() {
 // --- Main App Component --- 
 
 function App() {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    // Carregar do localStorage ao iniciar
+    try {
+      const stored = localStorage.getItem('bronzellaCart');
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
   const [allProducts, setAllProducts] = useState([]); // Store all products with category keys
   const [categories, setCategories] = useState([]); // Store categories with keys and names
+
+  // Salvar no localStorage sempre que cartItems mudar
+  useEffect(() => {
+    localStorage.setItem('bronzellaCart', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   // Load and process products and categories on mount
   useEffect(() => {
