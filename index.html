@@ -1,13 +1,2882 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bronzella_app</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronzella Glow - Produtos para Bronzeamento</title>
+    <meta name="description" content="Bronzella Glow - Produtos de alta qualidade para bronzeamento. Descubra nossa linha exclusiva para um bronzeado perfeito e duradouro.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="images/bronzella-glow-logo.png" alt="Bronzella Glow">
+            </div>
+            
+            <nav class="nav">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="menu">
+                    <li><a href="#inicio">INÍCIO</a></li>
+                    <li><a href="#produtos">PRODUTOS</a></li>
+                    <li><a href="#sobre">SOBRE NÓS</a></li>
+                    <li><a href="#contato">CONTATO</a></li>
+                </ul>
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Slideshow Principal -->
+    <section id="inicio" class="slideshow">
+        <div class="slide active" style="background-image: url('images/slide1.png');">
+            <div class="container">
+                <div class="slide-content">
+                    <h2>As Melhores Marcas do Mercado</h2>
+                    <p>Fornecemos produtos de alta qualidade para sua clínica de estética brilhar</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('images/slide2.png');">
+            <div class="container">
+                <div class="slide-content">
+                    <h2>Distribuição para Todo Brasil</h2>
+                    <p>Entrega rápida e segura dos melhores produtos para bronzeamento e estética</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('images/slide3.png');">
+            <div class="container">
+                <div class="slide-content">
+                    <h2>Parceria de Sucesso</h2>
+                    <p>Seja um parceiro e tenha acesso às marcas mais reconhecidas do mercado</p>
+                </div>
+            </div>
+        </div>
+        <!-- Controles do Slideshow (Opcional) -->
+        <div class="slideshow-controls">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="slideshow-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlight-item">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Produtos Seguros</h3>
+                <p>Dermatologicamente testados</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fas fa-sun"></i>
+                <h3>Bronzeado Natural</h3>
+                <p>Resultados que parecem naturais</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fas fa-truck"></i>
+                <h3>Entrega Rápida</h3>
+                <p>Para todo o Brasil</p>
+            </div>
+            <div class="highlight-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Ingredientes Naturais</h3>
+                <p>Fórmulas com ativos naturais</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos Produtos</h2>
+                <p>Conheça nossa linha exclusiva para um bronzeado perfeito</p>
+            </div>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" data-filter="todos">Todos</button>
+                <button class="filter-btn" data-filter="ativadores">Ativadores</button>
+                <button class="filter-btn" data-filter="potencializadores">Potencializadores</button>
+                <button class="filter-btn" data-filter="hidratantes">Hidratantes</button>
+                <button class="filter-btn" data-filter="esfoliantes">Esfoliantes</button>
+                <button class="filter-btn" data-filter="oleo-corporal">Óleo corporal</button>
+                <button class="filter-btn" data-filter="agua-oxigenada">Água Oxigenada</button>
+                <button class="filter-btn" data-filter="po-descolorante">Pó descolorante</button>
+                <button class="filter-btn" data-filter="corantes">Corantes</button>
+                <button class="filter-btn" data-filter="cuidados-pele">Cuidados com a pele</button>
+                <button class="filter-btn" data-filter="fitas">Fitas</button>
+
+                <!--<button class="filter-btn" data-filter="pos">Pós-Sol</button>
+                <button class="filter-btn" data-filter="autobronzeadores">Autobronzeadores</button> -->
+            </div>
+
+            <div class="product-grid">
+                <!-- Produto 1 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto1.jpg" alt="Ametista UV I Ativador de Bronzeado - 900ML
+                        ">
+                        <!-- <div class="product-tag">Bestseller</div> -->
+                    </div>
+                    <div class="product-info">
+                        <h3>Ametista UV I Ativador de Bronzeado - 900ML</h3>
+                        <p>AMETISTA UV I, é um ativador de bronzeado que deixa a pele uniformizada, dourada e
+                            hidratada entregando um bronzeado de forma mais rapida e saudável.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                            
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto2.jpg" alt="Ativador de Bronzeado Choco Paty - 850G">
+                        <!-- <div class="product-tag">Novo</div> -->
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador de Bronzeado Choco Paty - 850G</h3>
+                        <p>Ativador de Bronzeado com propriedades
+                            nutritivas do morango, chocolate ou pêssego, foram formulados
+                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão
+                            seu corpo com um bronzeado radiante e sua pele hidratada, macia
+                            e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                            
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto3.jpg" alt="Ativador Morango Bronze - 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Morango Bronze - 850G</h3>
+                        <p>Ativador de bronzeado com propriedades
+                            nutritivas do morango, chocolate ou pêssego, foram formulados
+                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão
+                            seu corpo com um bronzeado radiante e sua pele hidratada, macia
+                            e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                           
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card" data-category="Ativadores">
+                    <div class="product-image">
+                        <img src="images/produto4.jpg" alt="Ativador Pêssego Bronze - 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Pêssego Bronze - 850G</h3>
+                        <p>ativador de bronzeado com propriedades
+                            nutritivas do morango, chocolate ou pêssego, foram formulados
+                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão
+                            seu corpo com um bronzeado radiante e sua pele hidratada, macia
+                            e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                           
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto5.jpg" alt="Ativador De Bronzeado Neutro 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador De Bronzeado Neutro - 850G</h3>
+                        <p>Ativador formulado com óleo de coco e manteiga de cacau, ativos
+                            que deixarão sua pela macia.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto6.jpg" alt="Ativador Café Fit 850G">
+                        <!-- <div class="product-tag">Premium</div> -->
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Café Fit - 850G</h3>
+                        <p>Ativador de bronzeado com redutor de medidas com propriedades
+                            nutritivas do café e ativos, foi formulado com extratos de
+                            cânfora, café, d-pantenol e colágeno, que deixará seu corpo com um
+                            bronzeado radiante e sua pele hidratada, macia e perfumada a café.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 7 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto7.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Linha Praia Café Fit - 100G</h3>
+                        <p>O Ativador de bronzeado com redutor de medidas com propriedades
+                            nutritivas do café e ativos, foi formulado com extratos de
+                            cânfora, café, d-pantenol e colágeno, que deixará seu corpo com um
+                            bronzeado radiante e sua pele hidratada, macia e perfumada a café.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 8 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto8.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 9 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto9.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador en Creme Tutti Frutti - 450g</h3>
+                        <p>Desperte seus sentidos e potencialize seus resultados com a combinação do ativador de bronzeado e o creme hidratante. Esta poderosa associação protege e hidrata a pele duas vezes mais, garantindo que você desfrute de uma sensação de conforto e nutrição prolongada. Sinta a diferença e deixe sua pele radiante com a suavidade da formulação e do aroma irresistível de tutti-frutti.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 10 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto10.jpg" alt="Ativador Linha Praia Morango Bronze 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Linha Praia Morango Bronze - 100G</h3>
+                        <p>Ativador de bronzeado com propriedades
+                            nutritivas do morango, chocolate ou pêssego, foram formulados
+                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão
+                            seu corpo com um bronzeado radiante e sua pele hidratada, macia
+                            e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 11 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto11.jpg" alt="Ativador Linha Praia Choco Paty - 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Linha Praia Choco Paty - 100G</h3>
+                        <p>Ativador com propriedades
+                            nutritivas do morango, chocolate ou pêssego, foram formulados
+                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão
+                            seu corpo com um bronzeado radiante e sua pele hidratada, macia
+                            e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 12 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto12.jpg" alt="Ativador Camomila Bronze 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Camomila Bronze - 850G</h3>
+                        <p>O ativador de bronzeado camomila foi formulado com óleo de coco, extrato de camomila e colágeno, ativos que deixarão sua pele macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 13 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto13.jpg" alt="Ativador em Creme Capuccino - 450G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador em Creme Capuccino - 450G</h3>
+                        <p>Desperte seus sentidos e potencialize seus resultados com a combinação do ativador de bronzeado e o creme hidratante. Esta poderosa associação protege e hidrata a pele duas vezes mais, garantindo que você desfrute de uma sensação de conforto e nutrição prolongada. Sinta a diferença e deixe sua pele radiante com a suavidade da formulação e do aroma irresistível de cappuccino.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 14 -->
+                <div class="product-card" data-category="ativadores">
+                    <div class="product-image">
+                        <img src="images/produto14.jpg" alt="Ativador Linha Praia Pêssego Bronze FPS 6 - 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Linha Praia Pêssego Bronze FPS 6 - 100G</h3>
+                        <p>Ativador de bronzeado com propriedades
+                            nutritivas do morango, chocolate ou pêssego, foram formulados
+                            com óleo de coco e ativos, d-pantenol e colágeno que deixarão
+                            seu corpo com um bronzeado radiante e sua pele hidratada, macia
+                            e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 15 -->
+                <div class="product-card" data-category="potencializadores">
+                    <div class="product-image">
+                        <img src="images/produto15.jpg" alt="Intensificador Potência Máxima 3.0 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Intensificador Potência Máxima 3.0 - 850G</h3>
+                        <p>O Creme Potência Máxima 3.0 intensifica seu bronzeado e irá resgatar
+                            sua marquinha. Sua nova e potente fórmula age, principalmente, na
+                            pele para garantir hidratação e brilho. Além disso, garante um super
+                            resultado Neon e com um cheiro incrível, prolongando seu
+                            bronzeado por muito mais tempo.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- Produto 16 -->
+                 <div class="product-card" data-category="potencializadores">
+                    <div class="product-image">
+                        <img src="images/produto16.jpg" alt="Intensificador Potência Máxima 2.0 450G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Intensificador Potência Máxima 2.0 - 450G</h3>
+                        <p>O creme para intensificar seu bronzeado, que irá resgatar sua
+                            marquinha. Sua fórmula trabalha principalmente na pele, para garantir
+                            hidratação e brilho. Além disso, garante um super resultado
+                            neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 17 -->
+                <div class="product-card" data-category="potencializadores">
+                    <div class="product-image">
+                        <img src="images/produto17.jpg" alt="Ametista UV II Acelerador de Bronzeado 900ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ametista UV II Acelerador de Bronzeado - 900ML</h3>
+                        <p>AMETISTA UV II é um acelerador que proporciona um bronzeado mais rápido e duradouro.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 18 -->
+                <div class="product-card" data-category="potencializadores">
+                    <div class="product-image">
+                        <img src="images/produto18.jpg" alt="Intensificador Potência Máxima 3.0 450G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Intensificador Potência Máxima 3.0 - 450G</h3>
+                        <p>O Creme Potência Máxima 3.0 intensifica seu bronzeado e irá resgatar
+                            sua marquinha. Sua nova e potente fórmula age, principalmente, na
+                            pele para garantir hidratação e brilho. Além disso, garante um super
+                            resultado Neon e com um cheiro incrível, prolongando seu
+                            bronzeado por muito mais tempo.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 19 -->
+                <div class="product-card" data-category="potencializadores">
+                    <div class="product-image">
+                        <img src="images/produto19.jpg" alt="Intensificador Potência Máxima 2.0 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Intensificador Potência Máxima 2.0 - 850G</h3>
+                        <p>O creme para intensificar seu bronzeado, que irá resgatar sua
+                            marquinha. Sua fórmula trabalha principalmente na pele, para garantir
+                            hidratação e brilho. Além disso, garante um super resultado
+                            neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 20 -->
+                <div class="product-card" data-category="potencializadores">
+                    <div class="product-image">
+                        <img src="images/produto20.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 21 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto21.jpg" alt="Hidratante Iluminador Pêssego 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante Iluminador Pêssego - 1KG</h3>
+                        <p>O hidratante contêm propriedades nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 22 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto22.jpg" alt="Hidratante Morango 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante Morango - 1KG</h3>
+                        <p>O hidratante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 23 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto23.jpg" alt="Hidratante Chocolate 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante Chocolate - 1KG</h3>
+                        <p>O hidratante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 24 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto24.jpg" alt="Hidratante Neutro 850G                        ">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Hidratante Neutro - 850G</h3>
+
+                        <p>A hidratação da pele após o processo de bronzeamento é uma etapa
+                            muito importante. O Hidratante Corporal Neutro foi formulado com
+                            colágeno e d-panthenol e ativos com ação emoliente, suavizante
+                            e hidratante. Possui leve textura e rápida absorção para sua pele
+                            ficar hidratada, macia e suave.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 25 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto25.jpg" alt="Hidratante Iluminador Linha Praia Chocolate 100G                       ">
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Hidratante Iluminador Linha Praia Chocolate - 100G</h3>
+
+                        <p>O hidratante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Produto 26 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto27.jpg" alt="Gel Pós Sol Linha Praia 100G
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Pós Sol Linha Praia - 100G
+                        </h3>
+                        <p>O Gel Pós Sol foi desenvolvido com extrato de algas
+                            marinhas e d-pantenol, com ativos emoliente, calmante e
+                            hidratante, possui rápida absorção e deixa sua pele calma e
+                            hidratada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 28 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto28.jpg" alt="Hidratante de camomila 850g">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante de camomila - 850g</h3>
+                        <p>Hidratação da pele após o processo de bronzeamento é uma etapa muito importante. O hidratante corporal de camomila foi formulado com colágeno e d-pantenol e ativos com ação emoliente, suavizante e hidratante. Possui leve textura e rápida absorção para sua pele ficar hidratada, macia e suave.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 30 -->
+                <div class="product-card" data-category="hidratantes">
+                    <div class="product-image">
+                        <img src="images/produto30.jpg" alt="Hidratante Iluminador Linha Praia Pêssego 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante Iluminador Linha Praia Pêssego 100G</h3>
+                        <p>O hidratante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 31 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto31.jpg" alt="Esfoliante em Gel Pêssego 850G
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Esfoliante em Gel Pêssego - 850G</h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do pêssego,
+                            morango e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 32 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto32.jpg" alt="Esfoliante Morango 850G
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Esfoliante Morango - 850G
+                        </h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 33 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto33.jpg" alt="Esfoliante Neutro Creme 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Esfoliante Neutro Creme - 850G</h3>
+                        <p>A esfoliação é essencial no processo de renovação celular da
+                            pele, pois remove as células mortas de sua superfície,
+                            melhorando assim a absorção dos ativos da hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 34 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto34.jpg" alt="Esfoliante Chocolate 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Esfoliante Chocolate - 1KG</h3>
+                        <p>O esfoliante Corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango e pêssego, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 35 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto35.jpg" alt="Esfoliante de camomila 850g">
+                    </div>
+                    <div class="product-info">
+                        <h3>Esfoliante de camomila - 850g</h3>
+                        <p>A esfoliação é essencial no processo de renovação celular da pele, pois remove as células mortas de sua superfície, melhorando assim a absorção dos ativos da hidratação. O esfoliante corporal de camomila em creme contém colágeno e d-pantenol, além de ativos com ação emoliente e suavizante que proporcionarão uma pele mais macia, uniforme e pronta para a hidratação e cheirosa.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 36 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto36.jpg" alt="Gel Esfoliante Linha Praia Pêssego 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Esfoliante Linha Praia Pêssego - 100G</h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 37 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto37.jpg" alt="Gel Esfoliante Linha Praia Morango 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Esfoliante Linha Praia Morango - 100G</h3>
+                        <p>O esfoliantes corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 38 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto38.jpg" alt="Gel Esfoliante Linha Praia Chocolate 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Esfoliante Linha Praia Chocolate - 100G</h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 39 -->
+                <div class="product-card" data-category="esfoliantes">
+                    <div class="product-image">
+                        <img src="images/produto39.jpg" alt="Esfoliante em Gel Neutro 850G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Esfoliante em Gel Neutro - 850G</h3>
+                        <p>A esfoliação é essencial no processo de renovação celular da
+                            pele, pois remove as células mortas de sua superfície,
+                            melhorando assim a absorção dos ativos da hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 40 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto40.jpg" alt="Kit Banho de Lua Clareador">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kit Banho de Lua Clareador</h3>
+                        <p>Contém: Parafina 15g, OX Neutra 90ml, Pó Descolorante 40g, Dolomita 20g, Argila Branca 20g.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 41 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto41.jpg" alt="Óleo Iluminador Corporal 60ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>Óleo Iluminador Corporal 60ML</h3>
+                        <p>O Óleo Iluminador Patrícia Lobo Cosméticos possui um alto
+                            poder de hidratação, maciez e brilho para sua pele deixando-a
+                            perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 42 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto42.jpg" alt="Óleo Iluminador Corporal 500ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>Óleo Iluminador Corporal - 500ML</h3>
+                        <p>O Óleo Iluminador Patrícia Lobo Cosméticos possui um alto
+                            poder de hidratação, maciez e brilho para sua pele deixando-a
+                            perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 43 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto43.jpg" alt="Sabonete Líquido de Melancia 900ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sabonete Líquido de Melancia - 900ML</h3>
+                        <p>O Sabonete Líquido Corporal Patrícia Lobo Cosméticos é indicado para
+                            higiene corporal com propriedades hidratante e emoliente. O seu uso
+                            diário mantém sua pele limpa e saudável.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 44 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto44.jpg" alt="Sabonete Líquido de Melancia 5L">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sabonete Líquido de Melancia - 5L</h3>
+                        <p>O Sabonete Líquido Corporal Patrícia Lobo Cosméticos é indicado para
+                            higiene corporal com propriedades hidratante e emoliente. O seu uso
+                            diário mantém sua pele limpa e saudável.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 45 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto45.jpg" alt="Gel Pós Sol 950G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Pós Sol - 950G</h3>
+                        <p>O Gel Pós Sol Patrícia Lobo foi desenvolvido com extrato de algas
+                            marinhas e d-pantenol, com ativos emoliente, calmante e
+                            hidratante, possui rápida absorção e deixa sua pele calma e
+                            hidratada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 46 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto46.jpg" alt="Hidratante Iluminador Linha Praia Chocolate 100G
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante Iluminador Linha Praia Chocolate - 100G</h3>
+                        <p>O hidratante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 47 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto47.jpg" alt="Gel Pós Sol Linha Praia 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Pós Sol Linha Praia - 100G</h3>
+                        <p>O Gel Pós Sol foi desenvolvido com extrato de algas
+                            marinhas e d-pantenol, com ativos emoliente, calmante e
+                            hidratante, possui rápida absorção e deixa sua pele calma e
+                            hidratada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 48                             -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto48.jpg" alt="Gel Esfoliante Linha Praia Pêssego 100G
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Esfoliante Linha Praia Pêssego - 100G</h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 49
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto50.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                -->
+
+                <!-- Produto 50 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto50.jpg" alt="Gel Esfoliante Linha Praia Morango 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Esfoliante Linha Praia Morango - 100G</h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 51 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto51.jpg" alt="Argila Verde 500G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Argila Verde - 500G</h3>
+                        <p>A ARGILA VERDE é 100% pura e natural. Por ser rica em minerais com
+                            ações adstringentes, secativas, bactericidas e cicatrizantes, a Argila Verde
+                            remove o excesso de oleosidade da pele, limpa profundamente os poros
+                            deixando assim, a pele mais firme, higienizada e bonita.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 55 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto55.jpg" alt="Hidratante Iluminador Linha Praia Morango 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Hidratante Iluminador Linha Praia Morango - 100G</h3>
+                        <p>O hidratantes corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do chocolate,
+                            morango ou pêssego, possuem leve textura e rápida absorção
+                            para sua pele ficar hidratada, macia e suavemente perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 56 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto56.jpg" alt="Gel Esfoliante Linha Praia Chocolate 100G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Gel Esfoliante Linha Praia Chocolate - 100G</h3>
+                        <p>O esfoliante corporal, contêm propriedades
+                            nutritivas com colágeno e d-pantenol, com ativos do morango,
+                            pêssego e chocolate, com ação emoliente, cicatrizante e
+                            suavizante que proporcionarão uma pele macia, uniforme e
+                            pronta para a hidratação.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 57 -->
+                <div class="product-card" data-category="cuidados-pele">
+                    <div class="product-image">
+                        <img src="images/produto57.jpg" alt="Balm Linha SOFT 900ML
+
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Balm Linha Soft - 900ML
+                        </h3>
+                        <p>Balm Linha Soft
+                        </p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 58 -->
+                <div class="product-card" data-category="oleo-corporal">
+                    <div class="product-image">
+                        <img src="images/produto58.jpg" alt="Óleo Iluminador Corporal 60ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>Óleo Iluminador Corporal 60ML</h3>
+                        <p>O Óleo Iluminador possui um alto
+                            poder de hidratação, maciez e brilho para sua pele deixando-a
+                            perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 59 -->
+                <div class="product-card" data-category="oleo-corporal">
+                    <div class="product-image">
+                        <img src="images/produto59.jpg" alt="Óleo Iluminador Corporal 500ML
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Óleo Iluminador Corporal - 500ML
+                        </h3>
+                        <p>O Óleo Iluminador possui um alto
+                            poder de hidratação, maciez e brilho para sua pele deixando-a
+                            perfumada.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 60 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto60.jpg" alt="OX 20 Vol. Camomila 900ML
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 20 Vol. Camomila - 900ML</h3>
+                        <p>A Água Oxigenada Cremosa 20 Volumes é ideal para os processos de
+                            descolorações e colorações capilares. Recomenda-se usá-la junto
+                            com o pó descolorante.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 61 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto61.jpg" alt="OX 30 Vol. Morango 900ML
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 30 Vol. Morango - 900ML</h3>
+                        <p>A OX 30% enriquecida com propriedades nutritivas do morango ou
+                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 30
+                            volumes é ideal para os processos de descolorações.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 62 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto62.jpg" alt="OX 40 Vol. Pêssego 900ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 40 Vol. Pêssego - 900ML</h3>
+                        <p>A OX 30% enriquecida com propriedades nutritivas do pêssego,
+                            colágeno, d-pantenol e água oxigenada cremosa 40
+                            volumes é ideal para os processos de descolorações.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 63 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto63.jpg" alt="OX 40 Vol. NEUTRA 900ML">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 40 Vol. Neutro - 900ML</h3>
+                        <p>A Ox Neutra é ideal para os processos de descolorações e colorações
+                            capilares.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 64 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto64.jpg" alt="OX 40 Vol. Pêssego 5L">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 40 Vol. Pêssego 5L</h3>
+                        <p>A OX 30% enriquecida com propriedades nutritivas do pêssego,
+                            colágeno, d-pantenol e água oxigenada cremosa 40
+                            volumes é ideal para os processos de descolorações.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 65 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto65.jpg" alt="OX 40 Vol. Neutra 5L">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 40 Vol. Neutra 5L</h3>
+                        <p>A Ox Neutra é ideal para os processos de descolorações e colorações
+                            capilares</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 66 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto66.jpg" alt="OX 40 Vol. Chocolate 900ML
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 40 Vol. Chocolate - 900ML
+                        </h3>
+                        <p>A OX 30% enriquecida com propriedades nutritivas do morango ou
+                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 40
+                            volumes é ideal para os processos de descolorações.
+                        </p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 67 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto67.jpg" alt="OX 40 Vol. Chocolate 5L">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 40 Vol. Chocolate - 5L</h3>
+                        <p>A OX 30% enriquecida com propriedades nutritivas do morango ou
+                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 40
+                            volumes é ideal para os processos de descolorações.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 68 -->
+                <div class="product-card" data-category="agua-oxigenada">
+                    <div class="product-image">
+                        <img src="images/produto68.jpg" alt="OX 30 Vol. Morango 5L">
+                    </div>
+                    <div class="product-info">
+                        <h3>OX 30 Vol. Morango - 5L</h3>
+                        <p>A OX 30% enriquecida com propriedades nutritivas do morango ou
+                            chocolate, colágeno, d-pantenol e água oxigenada cremosa 30
+                            volumes é ideal para os processos de descolorações.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 69 -->
+                <div class="product-card" data-category="po-descolorante">
+                    <div class="product-image">
+                        <img src="images/produto69.jpg" alt="Pó Descolorante Morango 500G
+                        ">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pó Descolorante Morango - 500G</h3>
+                        <p>O pó descolorante contêm propriedades nutritivas do morango,
+                            chocolate ou pêssego enriquecido com colágeno, d-pantenol e
+                            combinados com extrato glicólico. Garante um potente clareador
+                            de pelo com suave e agradável perfume de morango, chocolate ou pêssego.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 70 -->
+                <div class="product-card" data-category="po-descolorante">
+                    <div class="product-image">
+                        <img src="images/produto70.jpg" alt="Pó Descolorante CAMOMILA 500G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pó Descolorante Camomila - 500G</h3>
+                        <p>O pó descolorante camomila tem uma formulação livre de amônia e
+                            proporciona uma descoloração mais segura e sem odores irritantes,
+                            além disso, contém queratina que minimiza ainda mais a
+                            agressividade do processo.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 71 -->
+                <div class="product-card" data-category="po-descolorante">
+                    <div class="product-image">
+                        <img src="images/produto71.jpg" alt="Pó Descolorante Pêssego 500G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pó Descolorante Pêssego - 500G</h3>
+                        <p>O pós descolorante contêm propriedades nutritivas do morango,
+                            chocolate ou pêssego enriquecido com colágeno, d-pantenol e
+                            combinados com extrato glicólico. Garante um potente clareador
+                            de pelo com suave e agradável perfume de morango, chocolate ou pêssego.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 72 -->
+                <div class="product-card" data-category="po-descolorante">
+                    <div class="product-image">
+                        <img src="images/produto72.jpg" alt="Pó Descolorante Neutro 500G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pó Descolorante Neutro - 500G</h3>
+                        <p>O pó descolorante neutro é um potente clareador de pelos,
+                            com fórmula dust free, manuseio com agradável perfume, sem levantar pó.
+                            com vitamina d-panthenol e manteiga de cacau combinados de modo
+                            a garantir um clareamento rápido.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 73 -->
+                <div class="product-card" data-category="po-descolorante">
+                    <div class="product-image">
+                        <img src="images/produto73.jpg" alt="Pó Descolorante Chocolate 500G">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pó Descolorante Chocolate - 500G</h3>
+                        <p>O pós descolorante contêm propriedades nutritivas do morango,
+                            chocolate ou pêssego enriquecido com colágeno, d-pantenol e
+                            combinados com extrato glicólico. Garante um potente clareador
+                            de pelo com suave e agradável perfume de morango, chocolate ou pêssego.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 74 -->
+                <div class="product-card" data-category="corantes">
+                    <div class="product-image">
+                        <img src="images/produto74.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 75 -->
+                <div class="product-card" data-category="corantes">
+                    <div class="product-image">
+                        <img src="images/produto75.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 76 -->
+                <div class="product-card" data-category="corantes">
+                    <div class="product-image">
+                        <img src="images/produto76.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 77 -->
+                <div class="product-card" data-category="corantes">
+                    <div class="product-image">
+                        <img src="images/produto77.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 78 -->
+                <div class="product-card" data-category="corantes">
+                    <div class="product-image">
+                        <img src="images/produto78.jpg" alt="Ativador Potência Ultra All Skin 1KG">
+                    </div>
+                    <div class="product-info">
+                        <h3>Ativador Potência Ultra All Skin - 1KG</h3>
+                        <p>Precisando retocar seu bronze? O creme para intensificar seu bronzeado e resgatar sua
+                            marquinha.
+                            Sua fórmula age principalmente na pele assegurando
+                            hidratação e brilho, além disso, garante um super resultado Neon.</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 79 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto79.jpg" alt="Fita tigresa">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Tigresa</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 80 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto80.jpg" alt="Fita cereja">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Cereja</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 81 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto81.jpg" alt="Fita flowers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Flowers</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 82 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto82.jpg" alt="Fita fundo de mar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Fundo do Mar</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Produto 83 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto83.jpg" alt="Fita laranja">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Laranja</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Produto 84 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto84.jpg" alt="Fita azul clara">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Azul Claro</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 85 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto85.jpg" alt="Fita rosa">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Rosa</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 85 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto85.jpg" alt="Fita rosa">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Rosa</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 86 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto86.jpg" alt="Fita pimenta">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Pimenta</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 87 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto87.jpg" alt="Fita malhada">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Malhada</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 88 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto88.jpg" alt="Fita prata">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Prata</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 89 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto89.jpg" alt="Fita arco-íris">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Arco-íris</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 90 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto90.jpg" alt="Fita amarelo">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Amarelo</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 91 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto91.jpg" alt="Fita azul">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Azul</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 92 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto92.jpg" alt="Fita branca">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Branca</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 93 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto93.jpg" alt="Fita cinza">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Cinza</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 94 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto94.jpg" alt="Fita preto">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Preto</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 95 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto95.jpg" alt="Fita verde">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Verde</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Produto 96 -->
+                <div class="product-card" data-category="fitas">
+                    <div class="product-image">
+                        <img src="images/produto96.jpg" alt="Fita vermelho">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fita Vermelho</h3>
+                        <p>Fitas para realçar seu bronzeamento</p>
+                        <div class="product-quantity">
+                            <label>Quantidade:</label>
+                            <div class="quantity-selector">
+                                <button class="minus">-</button>
+                                <input type="number" value="1" min="1" max="99">
+                                <button class="plus">+</button>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-add-to-cart">
+                                <i class="fas fa-cart-plus"></i> Adicionar ao Orçamento
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                            
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que Dizem Nossos Clientes</h2>
+                <p>Experiências reais com os produtos Bronzella Glow</p>
+            </div>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-image">
+                            <img src="images/cliente1.jpg" alt="Depoimento Cliente">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>"Uso os produtos da Bronzella Glow há mais de um ano e o resultado é incrível! Meu bronzeado fica uniforme e dura muito mais tempo."</p>
+                            <h4>Mariana Silva</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-image">
+                            <img src="images/cliente2.jpg" alt="Depoimento Cliente">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>"Os produtos são simplesmente maravilhosos! Minha pele fica hidratada e o bronzeado é natural, sem manchas ou ressecamento."</p>
+                            <h4>Carlos Oliveira</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-image">
+                            <img src="images/cliente3.jpg" alt="Depoimento Cliente">
+                        </div>
+                        <div class="testimonial-text">
+                            <p>"Experimentei vários produtos para bronzeamento, mas os da Bronzella Glow são incomparáveis. Qualidade superior e resultados visíveis desde a primeira aplicação."</p>
+                            <h4>Juliana Costa</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <div class="testimonial-prev"><i class="fas fa-chevron-left"></i></div>
+                <div class="testimonial-dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <div class="testimonial-next"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre a Bronzella Glow</h2>
+                <p>Conheça nossa história e compromisso com a qualidade</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p>A Bronzella Glow nasceu da paixão por criar produtos que proporcionam um bronzeado perfeito e saudável. Fundada em 2018, nossa empresa se dedica a desenvolver fórmulas inovadoras que combinam ingredientes naturais e tecnologia avançada.</p>
+                    <p>Nossa missão é oferecer produtos de alta qualidade que não apenas aceleram o bronzeamento, mas também cuidam da saúde da pele, proporcionando hidratação e proteção.</p>
+                    <p>Todos os nossos produtos são desenvolvidos por especialistas e passam por rigorosos testes de qualidade antes de chegarem até você. Não realizamos testes em animais e utilizamos embalagens sustentáveis, reafirmando nosso compromisso com o meio ambiente.</p>
+                    <a href="#contato" class="btn btn-primary">Entre em Contato</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/sobre.jpg" alt="Sobre Bronzella Glow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Solicite seu orçamento ou tire suas dúvidas</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p><a href="tel:+5511980370202">(11) 98037-0202</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-whatsapp">
+                    <h3>Solicite um Orçamento</h3>
+                    <p>Clique no botão abaixo para falar diretamente conosco pelo WhatsApp</p>
+                    <a href="https://wa.me/5511980370202" target="_blank" class="btn-whatsapp-large">
+                        <i class="fab fa-whatsapp"></i>
+                        Solicitar Orçamento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Pronta para um Bronzeado Perfeito?</h2>
+            <p>Experimente os produtos Bronzella Glow e descubra a diferença de um bronzeado natural, uniforme e duradouro.</p>
+            <a href="#produtos" class="btn-cta">Ver Produtos</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Bronzella Glow</h2>
+                    <p>Bronzeamento Perfeito</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#qualidade">Qualidade</a></li>
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Receba Novidades</h3>
+                    <p>Cadastre-se para receber ofertas exclusivas e dicas de bronzeamento.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu e-mail" required>
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bronzella Glow. Todos os direitos reservados.</p>
+                <div class="footer-terms">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrinho de Compras -->
+    <div class="cart-overlay"></div>
+    <div class="cart-container">
+        <div class="cart-header">
+            <h3>Seu Orçamento</h3>
+            <div class="cart-close"><i class="fas fa-times"></i></div>
+        </div>
+        <div class="cart-items">
+            <!-- Itens do carrinho serão inseridos aqui via JavaScript -->
+        </div>
+        <div class="cart-empty">
+            <p>Seu orçamento está vazio.</p>
+            <p>Adicione produtos para gerar um orçamento.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="cart-total-value">0 itens</span>
+            </div>
+            <div class="cart-buttons">
+                <div class="btn-checkout">Gerar Orçamento</div>
+                <div class="btn-continue">Continuar Comprando</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Orçamento -->
+    <div class="quote-modal">
+        <div class="quote-content">
+            <div class="quote-header">
+                <h3>Finalizar Orçamento</h3>
+                <div class="quote-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="quote-body">
+                <form class="quote-form">
+                    <div class="form-group">
+                        <label for="quote-name">Nome Completo*</label>
+                        <input type="text" id="quote-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-phone">Telefone*</label>
+                        <input type="tel" id="quote-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-email">E-mail</label>
+                        <input type="email" id="quote-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="quote-message">Observações</label>
+                        <textarea id="quote-message" rows="3"></textarea>
+                    </div>
+                </form>
+                
+                <div class="quote-summary">
+                    <h4>Resumo do Orçamento</h4>
+                    <div class="quote-items">
+                        <!-- Itens do orçamento serão inseridos aqui via JavaScript -->
+                    </div>
+                    <div class="quote-total">
+                        <span>Total:</span>
+                        <span class="quote-total-value">0 itens</span>
+                    </div>
+                </div>
+            </div>
+            <div class="quote-footer">
+                <button class="btn-send-quote">
+                    <i class="fab fa-whatsapp"></i> Enviar Orçamento via WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5511980370202" target="_blank" class="whatsapp-float" aria-label="Contato WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
 </html>
