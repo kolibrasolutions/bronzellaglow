@@ -338,7 +338,7 @@ class ShoppingCart {
         }
         
         // Número do WhatsApp do vendedor (com formatação correta para API)
-        const phoneNumber = '5511963027311';
+        const phoneNumber = '5511982901369';
         
         // Codificar mensagem para URL
         const encodedMessage = encodeURIComponent(message);
