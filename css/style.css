@@ -159,7 +159,7 @@ section {
 
 .btn-cta {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: white !important;
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     border-radius: var(--border-radius-md);
