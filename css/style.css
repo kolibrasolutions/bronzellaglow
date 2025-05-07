@@ -396,7 +396,7 @@ section {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: var(--spacing-md);
+    gap: 16px;
     justify-content: center;
     margin: 0 auto;
 }
