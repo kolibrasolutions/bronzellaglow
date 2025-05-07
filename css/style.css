@@ -222,6 +222,12 @@ section {
 .logo {
     display: block;
     margin-right: auto;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.8;
 }
 
 .logo img {
