@@ -71,6 +71,10 @@ function initProductFilter() {
             
             // Filtrar produtos
             productCards.forEach(card => {
+                // Remover estilos inline que possam ter sido aplicados
+                card.style.height = '';
+                card.style.maxWidth = '';
+                card.style.width = '';
                 if (filterValue === 'todos' || card.getAttribute('data-category') === filterValue) {
                     card.style.display = 'block';
                     setTimeout(() => {
