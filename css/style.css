@@ -396,7 +396,7 @@ section {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 16px;
+    gap: 5px;
     justify-content: center;
     margin: 0 auto;
 }
@@ -407,7 +407,7 @@ section {
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition-normal);
-    max-width: 220px;
+    max-width: 300px;
     margin: 0 auto;
 }
 
@@ -654,8 +654,14 @@ section {
 }
 
 .contact-item p {
-    color: var(--gray);
-    font-size: 0.95rem;
+    color: var(--dark);
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.contact-item p strong {
+    font-weight: 600;
+    color: var(--dark);
 }
 
 .contact-whatsapp {
