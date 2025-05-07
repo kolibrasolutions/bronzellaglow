@@ -66,6 +66,7 @@ class ShoppingCart {
         // Adicionar produtos ao carrinho
         document.querySelectorAll('.btn-add-to-cart').forEach(button => {
             button.addEventListener('click', (e) => {
+                e.preventDefault(); // Impede o redirecionamento ao topo
                 const productCard = e.target.closest('.product-card');
                 if (productCard) {
                     this.addProductFromCard(productCard);
