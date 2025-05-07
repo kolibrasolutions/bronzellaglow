@@ -395,7 +395,7 @@ section {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: var(--spacing-md);
     justify-content: center;
     margin: 0 auto;
@@ -906,8 +906,7 @@ section {
 /* Responsividade */
 @media (max-width: 1024px) {
     .product-grid {
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-        gap: var(--spacing-sm);
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
     }
     
     .highlights .container {
@@ -1261,5 +1260,11 @@ section {
 
 .contact-item a:hover {
     color: var(--primary-color);
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
