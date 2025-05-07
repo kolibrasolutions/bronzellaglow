@@ -1,15 +1,3 @@
-/* RESET GLOBAL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Variáveis CSS */
 :root {
     /* Cores principais */
@@ -981,6 +969,7 @@ section {
     /* Ajustes do Slideshow para Mobile */
     .slideshow {
         height: 80vh;
+        margin-top: 60px;
     }
 
     .slide {
@@ -1093,6 +1082,7 @@ section {
     
     .slideshow {
         height: 70vh;
+        margin-top: 55px;
     }
     
     .slide {
@@ -1138,21 +1128,23 @@ section {
 
 /* Slideshow */
 .slideshow {
-    width: 100vw;
-    padding-top: 80px; /* altura do header */
-    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 80px; /* Espaço para o header fixo */
 }
 
 .slide {
-    width: 100vw;
-    height: calc(100vh - 80px); /* altura total menos o header */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    border: none;
-    position: relative;
 }
 
 .slide.active {
