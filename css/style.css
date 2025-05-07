@@ -409,7 +409,7 @@ section {
     transition: var(--transition-normal);
     max-width: 300px;
     margin: 0 auto;
-    height: 430px;
+    height: 480px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -451,6 +451,10 @@ section {
 }
 
 .product-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: var(--spacing-sm);
 }
 
@@ -471,6 +475,11 @@ section {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+.product-quantity,
+.product-actions {
+    margin-top: auto;
 }
 
 /* Testimonials */
