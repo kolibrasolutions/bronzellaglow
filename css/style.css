@@ -981,7 +981,6 @@ section {
     /* Ajustes do Slideshow para Mobile */
     .slideshow {
         height: 80vh;
-        margin-top: 60px;
     }
 
     .slide {
@@ -1094,7 +1093,6 @@ section {
     
     .slideshow {
         height: 70vh;
-        margin-top: 55px;
     }
     
     .slide {
