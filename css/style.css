@@ -1139,21 +1139,20 @@ section {
 /* Slideshow */
 .slideshow {
     width: 100vw;
-    margin: 0;
-    padding: 0;
-    border: none;
-    overflow: hidden;
+    padding-top: 80px; /* altura do header */
+    box-sizing: border-box;
 }
 
 .slide {
     width: 100vw;
-    height: 100vh; /* ou ajuste para a altura desejada, ex: 600px */
+    height: calc(100vh - 80px); /* altura total menos o header */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     border: none;
+    position: relative;
 }
 
 .slide.active {
