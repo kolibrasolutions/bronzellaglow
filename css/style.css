@@ -409,6 +409,10 @@ section {
     transition: var(--transition-normal);
     max-width: 300px;
     margin: 0 auto;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product-card:hover {
@@ -461,6 +465,12 @@ section {
     color: var(--gray);
     margin-bottom: 12px;
     font-size: 0.9rem;
+    max-height: 48px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 /* Testimonials */
