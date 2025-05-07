@@ -407,9 +407,8 @@ section {
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition-normal);
-    max-width: 300px;
-    margin: 0 auto;
-    height: 480px;
+    max-width: 300px !important;
+    height: 480px !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -422,15 +421,19 @@ section {
 
 .product-image {
     position: relative;
-    height: auto;
+    aspect-ratio: 1/1 !important;
+    width: 100% !important;
+    height: 200px !important;
     overflow: hidden;
-    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
     transition: transform 0.5s ease;
 }
 
